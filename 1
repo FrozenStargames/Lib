@@ -26,6 +26,14 @@ function library:CreateWindow(Name)
 	Frame.BackgroundColor3 = Color3.new(0.0705882, 0.0705882, 0.0705882)
 	Frame.BorderSizePixel = 0
 	Frame.Size = UDim2.new(0, 850, 0, 19)
+	
+	local Frame_2 = Instance.new("Frame")
+	local TextButton_2 = Instance.new("TextButton")
+	Frame_2.Parent = Main
+	Frame_2.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
+	Frame_2.BorderSizePixel = 0
+	Frame_2.Position = UDim2.new(0, 0, 0.0345454551, 0)
+	Frame_2.Size = UDim2.new(0, 111, 0, 531)
 
 	TextLabel.Parent = Frame
 	TextLabel.BackgroundColor3 = Color3.new(0.0705882, 0.0705882, 0.0705882)
@@ -82,7 +90,7 @@ function library:CreateWindow(Name)
 	game:GetService("TweenService"):Create(Main,TweenInfo.new(1),{Position = UDim2.new(0.5,0,0.5,0)}):Play()
 end
 return library
---[[local Frame_2 = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
 local TextButton_2 = Instance.new("TextButton")
 Frame_2.Parent = Main
 Frame_2.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
@@ -98,4 +106,3 @@ TextButton_2.Size = UDim2.new(0, 110, 0, 31)
 TextButton_2.Font = Enum.Font.Gotham
 TextButton_2.TextColor3 = Color3.new(1, 1, 1)
 TextButton_2.TextSize = 15
-]]
