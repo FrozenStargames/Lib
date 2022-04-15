@@ -19,7 +19,7 @@ function library:CreateWindow(Name)
 	Main.BorderColor3 = Color3.new(1, 1, 1)
 	Main.BorderSizePixel = 0
 	Main.AnchorPoint = Vector2.new(0.5,0.5)
-	Main.Position = UDim2.new(0,game.Workspace.CurrentCamera.ViewportSize.x/2,1,-Main.AbsolutePosition.Y)
+	Main.Position = UDim2.new(0,game.Workspace.CurrentCamera.ViewportSize.x/2,1,game.Workspace.CurrentCamera.ViewportSize.y)
 	Main.Size = UDim2.new(0, 850, 0, 550)
 
 	Frame.Parent = Main
