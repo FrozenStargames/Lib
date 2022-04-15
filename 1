@@ -3,12 +3,13 @@ if game.CoreGui:FindFirstChild("ScreenGuiLe45") then
 game.CoreGui:FindFirstChild("ScreenGuiLe45"):Destroy()
 end
 function library:CreateWindow(Name)
-	local ScreenGui = Instance.new("ScreenGuiLe45")
+	local ScreenGui = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local Frame = Instance.new("Frame")
 	local TextButton = Instance.new("TextButton")
 	local TextLabel = Instance.new("TextLabel")
 	ScreenGui.Parent = game.CoreGui
+	ScreenGui.Name = "ScreenGuiLe45"
 
 	Main.Name = "Main"
 	Main.Parent = ScreenGui
