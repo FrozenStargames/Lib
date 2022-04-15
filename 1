@@ -1,6 +1,9 @@
 local library = {}
+if game.CoreGui:FindFirstChild("ScreenGuiLe45") then
+game.CoreGui:FindFirstChild("ScreenGuiLe45"):Destroy()
+end
 function library:CreateWindow(Name)
-	local ScreenGui = Instance.new("ScreenGui")
+	local ScreenGui = Instance.new("ScreenGuiLe45")
 	local Main = Instance.new("Frame")
 	local Frame = Instance.new("Frame")
 	local TextButton = Instance.new("TextButton")
