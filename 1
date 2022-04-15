@@ -1,7 +1,7 @@
 local library = {}
---[[if game.CoreGui:FindFirstChild("ScreenGuiLe45") then
+if game.CoreGui:FindFirstChild("ScreenGuiLe45") then
 game.CoreGui:FindFirstChild("ScreenGuiLe45"):Destroy()
-end]]
+else
 function library:CreateWindow(Name)
 	local ScreenGui = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
@@ -75,6 +75,7 @@ function library:CreateWindow(Name)
 			end
 		end
 	end)
+end
 end
 return library
 --[[local Frame_2 = Instance.new("Frame")
