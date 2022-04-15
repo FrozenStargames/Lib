@@ -18,7 +18,7 @@ function library:CreateWindow(Name)
 	Main.BackgroundColor3 = Color3.new(0.101961, 0.101961, 0.101961)
 	Main.BorderColor3 = Color3.new(1, 1, 1)
 	Main.BorderSizePixel = 0
-	Main.Position = UDim2.new(0,game.Workspace.CurrentCamera.ViewportSize.X/2,0,game.Workspace.CurrentCamera.ViewportSize.Y)
+	Main.Position = UDim2.new(0,game.Workspace.CurrentCamera.ViewportSize.x/2,0,game.Workspace.CurrentCamera.ViewportSize.y/4)
 	Main.Size = UDim2.new(0, 850, 0, 550)
 
 	Frame.Parent = Main
@@ -78,7 +78,7 @@ function library:CreateWindow(Name)
 		end
 	end)
 	wait(2)
-	game:GetService("TweenService"):Create(Main,TweenInfo.new(2),{Position = UDim2.new(0,game.Workspace.CurrentCamera.ViewportSize.X/2,0,game.Workspace.CurrentCamera.ViewportSize.Y/2)}):Play()
+	game:GetService("TweenService"):Create(Main,TweenInfo.new(2),{Position = UDim2.new(0.5,0,0.5,0)}):Play()
 end
 return library
 --[[local Frame_2 = Instance.new("Frame")
