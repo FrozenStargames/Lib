@@ -134,7 +134,7 @@ TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
 -----------------------------functions------------------------------------
---[[local UIS = game:GetService("UserInputService")
+local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
 local ButtonExit = TextButton_5
 local Trangle = ImageLabel
@@ -180,6 +180,7 @@ Button.InputBegan:Connect(function(input)
 		Tween4(Trangle,.5,0):Play()
 		end
 end)
+--[[
 local ButtonExit = TextButton_5
 local ButtonOpenImage = ImageButton
 local Triangle = ImageLabel
