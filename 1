@@ -160,7 +160,6 @@ TextLabel_3.TextTransparency = 1
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
-print("1")
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -303,7 +302,7 @@ Minimize.InputBegan:Connect(function(input)
 		a.Completed:Wait()
 		for i,v in pairs(Gui:GetDescendants()) do
 			if v.ClassName == "Frame" then
-				if v.Parent ~= Gui and v.Name ~= "Drag" and v.Parent ~= script.Parent.Parent then
+				if v.Parent ~= Gui and v.Name ~= "Drag" and v.Name ~=  "Minimize" and v.Name ~=  "Exit" then
 					Tween3(v,1.5,1):Play()
 				end
 			end
@@ -319,7 +318,7 @@ Minimize.InputBegan:Connect(function(input)
 		else
 			for i,v in pairs(Gui:GetDescendants()) do
 				if v.ClassName == "Frame" then
-					if v.Name ~= "Drag" and v.Parent ~= script.Parent.Parent and v.Name ~= "Frame2" and v.Name ~= "Addition" and v.Name ~= "Slider" and v.Name ~="ToggleAll" then
+					if v.Name ~= "Drag" and v.Parent ~= Drag and v.Name ~= "Frame2" and v.Name ~= "Slider" and v.Name ~= "ToggleAll" then
 						Tween3(v,1.5,0):Play()
 					end
 				end
@@ -333,13 +332,13 @@ Minimize.InputBegan:Connect(function(input)
 			end
 			a.Completed:Wait()
 			for i,v in pairs(Gui:GetDescendants()) do
-				if v.ClassName == "TextButton" and v.Parent ~= Gui.Main.Frame2 then
+				if v.ClassName == "TextButton" and v.Parent ~= Gui.Main.Frame2 and v ~= TextButton_5 then
 					Tween2(v,1.5,0):Play()
 					Tween3(v,1.5,0):Play()
 				end
 			end
 			for i,v in pairs(Gui:GetDescendants()) do
-				if v.ClassName == "TextLabel" then
+				if v.ClassName == "TextLabel" and v ~= TextLabel_3 then
 					Tween2(v,1.5,0):Play()
 				end
 			end
