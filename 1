@@ -155,7 +155,7 @@ local function Tween4(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{ImageTransparency = Size1})
 	return a
 end
-Button.InputBegan:Connect(function(input)
+ButtonOpenImage.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
 		if Trangle.ImageTransparency == 1 then
 			Tween(ButtonOpenImage,.5,UDim2.new(0,0,0,24)):Play()
@@ -180,7 +180,6 @@ Button.InputBegan:Connect(function(input)
 		Tween4(Trangle,.5,0):Play()
 		end
 end)
---[[
 local ButtonExit = TextButton_5
 local ButtonOpenImage = ImageButton
 local Triangle = ImageLabel
@@ -362,6 +361,6 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 			end
 		end)
 	end
-end]]
+end
 end
 return library
