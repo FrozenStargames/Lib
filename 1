@@ -19,6 +19,10 @@ local Addition = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
 local Frame_3 = Instance.new("Frame")
 local TextLabel_3 = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 ScreenGuiLe45.Name = "ScreenGuiLe45"
 ScreenGuiLe45.Parent = game.CoreGui
 
@@ -30,6 +34,9 @@ Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.113167301, 10, 0.144412592, 5)
 Main.Size = UDim2.new(0, 849, 0, 485)
 Main.ZIndex = 0
+
+UICorner.Parent = Main
+UICorner.CornerRadius = UDim2.new(0,2)
 
 ImageButton.Parent = Main
 ImageButton.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -50,6 +57,9 @@ Frame2.Position = UDim2.new(-0.00117785635, 0, 0.0510063879, 0)
 Frame2.Size = UDim2.new(0, 145, 0, 461)
 Frame2.ZIndex = 3
 
+UICorner_4.Parent = Frame2
+UICorner_4.CornerRadius = UDim.new(0,2)
+
 UIListLayout.Parent = Frame2
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
@@ -59,6 +69,9 @@ PrePage.BackgroundColor3 = Color3.new(0.117647, 0.113725, 0.184314)
 PrePage.BorderSizePixel = 0
 PrePage.Position = UDim2.new(-0.00117785635, 0, 0.0510063879, 0)
 PrePage.Size = UDim2.new(0, 850, 0, 461)
+
+UICorner_4.Parent = PrePage
+UICorner_4.CornerRadius = UDim.new(0,1)
 
 TextButton_5.Parent = Main
 TextButton_5.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -98,6 +111,12 @@ Exit.BorderSizePixel = 0
 Exit.Position = UDim2.new(0.975265026, 0, 0.00600000005, 2)
 Exit.Size = UDim2.new(0, 16, 0, 16)
 Exit.ZIndex = 2
+
+UICorner_2.Parent = Minimize
+UICorner_2.CornerRadius = UDim.new(0,8)
+
+UICorner_3.Parent = Exit
+UICorner_3.CornerRadius = UDim.new(0,8)
 
 Addition.Name = "Addition"
 Addition.Parent = Main
