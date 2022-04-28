@@ -164,7 +164,7 @@ TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
 
 local libPage = {}
-libPage:addPage()
+function libPage:addPage()
 Page.Name = "Page"
 Page.Parent = PrePage
 Page.BackgroundColor3 = Color3.new(0.117647, 0.113725, 0.184314)
@@ -174,7 +174,6 @@ Page.Size = UDim2.new(0, 827, 0, 440)
 
 UICorner_2.Parent = Page
 UICorner_2.CornerRadius = UDim.new(0,8)
-end
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -406,6 +405,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 end
-	return libPage
+end
+return libPage
 end
 return library
