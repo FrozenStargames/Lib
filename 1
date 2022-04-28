@@ -23,6 +23,7 @@ local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
 local UICorner_3 = Instance.new("UICorner")
 local UICorner_4 = Instance.new("UICorner")
+local Frame_4 = Instance.new("Frame")
 ScreenGuiLe45.Name = "ScreenGuiLe45"
 ScreenGuiLe45.Parent = game.CoreGui
 
@@ -161,6 +162,19 @@ TextLabel_3.TextTransparency = 1
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
+
+local libPage = {}
+libPage:addPage()
+Page.Name = "Page"
+Page.Parent = PrePage
+Page.BackgroundColor3 = Color3.new(0.117647, 0.113725, 0.184314)
+Page.BorderSizePixel = 0
+Page.Position = UDim2.new(0.014117647, 0, 0.0236464236, 0)
+Page.Size = UDim2.new(0, 827, 0, 440)
+
+UICorner_2.Parent = Page
+UICorner_2.CornerRadius = UDim.new(0,8)
+end
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -392,5 +406,6 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 end
+	return libPage
 end
 return library
