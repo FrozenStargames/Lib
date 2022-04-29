@@ -429,6 +429,16 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 end
+for i,Buttons in pairs(Frame2:GetChildren()) do
+	if Buttons.ClassName == "TextButton" then
+		Buttons.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				delta = Buttons.AbsolutePosition.Y+8 - script.Parent.AbsolutePosition.Y
+				Tween(script.Parent,.5,UDim2.new(script.Parent.Position.X.Scale,script.Parent.Position.X.Offset,script.Parent.Position.Y.Scale,script.Parent.Position.Y.Offset + delta)):Play()
+			end
+		end)
+	end
+	end
 end
 return libPage
 end
