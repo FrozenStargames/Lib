@@ -178,7 +178,7 @@ Page.Size = UDim2.new(0, 827, 0, 440)
 
 UICorner_5.Parent = Page
 UICorner_5.CornerRadius = UDim.new(0,8)
-print(1)
+
 TextButton_2.Name = name.."Button"
 TextButton_2.Parent = Frame2
 TextButton_2.BackgroundColor3 = Color3.new(0.184314, 0.180392, 0.278431)
@@ -425,7 +425,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		Buttons.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 				delta = Buttons.AbsolutePosition.Y+8 - script.Parent.AbsolutePosition.Y
-				Tween5(script.Parent,.5,UDim2.new(script.Parent.Position.X.Scale,script.Parent.Position.X.Offset,script.Parent.Position.Y.Scale,script.Parent.Position.Y.Offset + delta)):Play()
+				Tween5(Trangle,.5,UDim2.new(Trangle.Position.X.Scale,Trangle.Position.X.Offset,Trangle.Position.Y.Scale,Trangle.Position.Y.Offset + delta)):Play()
 			end
 		end)
 	end
