@@ -164,9 +164,10 @@ TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
 
 local libPage = {}
-function libPage:addPage()
+function libPage:addPage(name)
 local Page = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
 Page.Name = "Page"
 Page.Parent = PrePage
 Page.BackgroundColor3 = Color3.new(0.117647, 0.113725, 0.184314)
@@ -176,6 +177,22 @@ Page.Size = UDim2.new(0, 827, 0, 440)
 
 UICorner_5.Parent = Page
 UICorner_5.CornerRadius = UDim.new(0,8)
+
+TextButton_2.Parent = Frame2
+TextButton_2.BackgroundColor3 = Color3.new(0.184314, 0.180392, 0.278431)
+TextButton_2.BackgroundTransparency = 1
+TextButton_2.BorderColor3 = Color3.new(0.615686, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0, 0, 0, 33)
+TextButton_2.Size = UDim2.new(0, 145, 0, 28)
+TextButton_2.ZIndex = 5
+TextButton_2.Font = Enum.Font.TitilliumWeb
+TextButton_2.TextColor3 = Color3.new(1, 1, 1)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 25
+TextButton_2.Text = name
+TextButton_2.TextTransparency = 1
+TextButton_2.TextWrapped = true
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
