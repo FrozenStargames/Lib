@@ -23,6 +23,8 @@ local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
 local UICorner_3 = Instance.new("UICorner")
 local UICorner_4 = Instance.new("UICorner")
+local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
 local Frame_4 = Instance.new("Frame")
 ScreenGuiLe45.Name = "ScreenGuiLe45"
 ScreenGuiLe45.Parent = game.CoreGui
@@ -294,7 +296,7 @@ local startpos = nil
 local function upd(input)
 		if input.UserInputType == Enum.UserInputType.MouseMovement then
 			local position = UDim2.new(startpos.X.Scale,startpos.X.Offset+delta.X,startpos.Y.Scale,startpos.Y.Offset + delta.Y)
-		game:GetService("TweenService"):Create(Main,TweenInfo.new(.3),{Position = position}):Play()
+		game:GetService("TweenService"):Create(Main,TweenInfo.new(.15),{Position = position}):Play()
 	end
 	end
 Drag.InputBegan:Connect(function(input)
