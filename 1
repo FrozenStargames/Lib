@@ -220,6 +220,10 @@ local function Tween4(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{ImageTransparency = Size1})
 	return a
 end
+local function Tween5(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Position = Size1})
+	return a
+end
 ButtonOpenImage.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
 		if Trangle.ImageTransparency == 1 then
@@ -415,10 +419,6 @@ Exit.InputBegan:Connect(function(input)
 	end
 end)
 local delta = nil
-local function Tween5(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Position = Size1})
-	return a
-end
 for i,Buttons in pairs(Frame2:GetChildren()) do
 	if Buttons.ClassName == "TextButton" then
 		Buttons.InputBegan:Connect(function(input)
@@ -429,16 +429,6 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 end
-for i,Buttons in pairs(Frame2:GetChildren()) do
-	if Buttons.ClassName == "TextButton" then
-		Buttons.InputBegan:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-				delta = Buttons.AbsolutePosition.Y+8 - script.Parent.AbsolutePosition.Y
-				Tween(script.Parent,.5,UDim2.new(script.Parent.Position.X.Scale,script.Parent.Position.X.Offset,script.Parent.Position.Y.Scale,script.Parent.Position.Y.Offset + delta)):Play()
-			end
-		end)
-	end
-	end
 end
 return libPage
 end
