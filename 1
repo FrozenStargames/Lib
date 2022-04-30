@@ -204,11 +204,12 @@ UICorner_6.Parent = Tab
 UICorner_6.CornerRadius = UDim.new(0,10)
 
 Tab.InputBegan:Connect(function(input)
-if input.UserInputType = Enum.UserInputType.MouseButton1 then
+if input.UserInputType == Enum.UserInputType.MouseButton1 then
 for i,v in pairs(PrePage:GetChildren()) do
 if v == Page then
 Page.Visible = true
 else Page.Visible = false
+end
 end
 end
 end)
@@ -497,6 +498,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 			end
 		end)
 	end
+	end
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
@@ -511,6 +513,7 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 		end
 	end
 end
+
 end
 return libLabel
 end
