@@ -160,7 +160,7 @@ TextLabel_3.TextColor3 = Color3.new(1, 1, 1)
 TextLabel_3.TextSize = 33
 TextLabel_3.TextTransparency = 1
 TextLabel_3.TextWrapped = true
-TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Center
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Center
 
 local libPage = {}
@@ -479,10 +479,13 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
-	print(1)
+	print(11)
 for i,Sizer in pairs(PrePage:GetDescendants()) do
+print(1)
 	if Sizer.ClassName == "UISizeConstraint" then
+	print(2)
 		if Sizer.Parent.Parent.Parent == PrePage then
+		print(4)
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v.UISizeConstraint.MaxSize.Y)
