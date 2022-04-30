@@ -482,13 +482,13 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
-		print(1)
-		print(Sizer)
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
+				print(Sizer.MaxSize)
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindfirstChildOfClass("UISizeConstraint").MaxSize.Y)
 					print(v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y)
 					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindfirstChildOfClass("UISizeConstraint").MinSize.Y)
+					print(Sizer.." lol")
 				end
 			end
 			print(Sizer.." lol")
