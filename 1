@@ -206,10 +206,8 @@ Tab.InputBegan:Connect(function(input)
 if input.UserInputType == Enum.UserInputType.MouseButton1 then
 for i,v in pairs(PrePage:GetChildren()) do
 v.Visible = false
-v.ZIndex = 1
 print(1)
 end
-Page.ZIndex = 2
 print(Page.ZIndex)
 Page.Visible = true
 end
