@@ -162,7 +162,7 @@ TextLabel_3.TextTransparency = 1
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Center
-print("noFunc")
+
 local libPage = {}
 function libPage:addPage(name)
 local Page = Instance.new("Frame")
@@ -201,7 +201,6 @@ Tab.TextWrapped = true
 UICorner_6.Name = name.."Corner"
 UICorner_6.Parent = Tab
 UICorner_6.CornerRadius = UDim.new(0,10)
-print("Func")
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -427,7 +426,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 	if Buttons.ClassName == "TextButton" then
 		Buttons.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-				delta = Buttons.AbsolutePosition.Y+8 - script.Parent.AbsolutePosition.Y
+				delta = Buttons.AbsolutePosition.Y+8 - Triangle.AbsolutePosition.Y
 				print(delta)
 				Tween5(Triangle,.5,UDim2.new(Triangle.Position.X.Scale,Triangle.Position.X.Offset,Triangle.Position.Y.Scale,Triangle.Position.Y.Offset + delta)):Play()
 			end
