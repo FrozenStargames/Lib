@@ -479,14 +479,12 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
-	print(11)
 for i,Sizer in pairs(PrePage:GetDescendants()) do
-print(1)
 	if Sizer.ClassName == "UISizeConstraint" then
-	print(2)
 		if Sizer.Parent.Parent.Parent == PrePage then
-		print(4)
+		print(Sizer)
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
+			print(v)
 				if not string.find(tostring(v.ClassName),"UI") then
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v.UISizeConstraint.MaxSize.Y)
 					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v.UISizeConstraint.MinSize.Y)
