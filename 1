@@ -3,7 +3,6 @@ if v11.Name == "ScreenGuiLe45" then
 v11:Destroy()
 end
 end
-print(1)
 local library = {}
 function library:CreateWindow(Name) 
 local ScreenGuiLe45 = Instance.new("ScreenGui")
@@ -263,10 +262,6 @@ UICorner_8.Name = text.."Corner"
 UICorner_8.Parent = Section
 UICorner_8.CornerRadius = UDim.new(0,8)
 
-local libLabel = {}
-function libLabel:AddLabel(text)
-
-
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -499,9 +494,11 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
+print(1)
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
+		print(1)
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v.UISizeConstraint.MaxSize.Y)
@@ -513,9 +510,7 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 		end
 	end
 end
-
-end
-return libLabel
+print(1)
 end
 return libSection
 end
