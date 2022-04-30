@@ -495,13 +495,11 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 					print(Sizer)
 				end
 			end
-			print(Sizer.." lol")
-			Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y+30)
-			Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y+30)
+			Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y+10)
+			Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y+10)
 		end
 	end
 end
-print(1)
 end
 return libSection
 end
