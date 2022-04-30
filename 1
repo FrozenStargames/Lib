@@ -483,6 +483,7 @@ Exit.InputBegan:Connect(function(input)
 		Gui:Destroy()
 	end
 end)
+print(1)
 local delta = nil
 for i,Buttons in pairs(Frame2:GetChildren()) do
 	if Buttons.ClassName == "TextButton" then
@@ -498,7 +499,6 @@ print(1)
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
-		print(1)
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v.UISizeConstraint.MaxSize.Y)
