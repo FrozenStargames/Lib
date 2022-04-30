@@ -219,6 +219,7 @@ local UIGridLayout = Instance.new("UIGridLayout")
 local UISizeConstraint = Instance.new("UISizeConstraint")
 local TextLabel = Instance.new("TextLabel")
 local UICorner_8 = Instance.new("UICorner")
+local Underline = Instance.new("Frame")
 local UISizeConstraint_2 = Instance.new("UISizeConstraint")
 
 Section.Name = text.."Section"
@@ -262,6 +263,11 @@ UICorner_8.Name = text.."Corner"
 UICorner_8.Parent = Section
 UICorner_8.CornerRadius = UDim.new(0,8)
 
+Underline.Parent = TextLabel
+Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
+Underline.BorderSizePixel = 0
+Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
+Underline.Size = UDim2.new(0, 270, 0, 1)
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
