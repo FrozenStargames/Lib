@@ -482,6 +482,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
+		print(1)
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 			print(v)
 				if not string.find(tostring(v.ClassName),"UI") then
