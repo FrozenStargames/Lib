@@ -485,9 +485,9 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
 				print(Sizer.MaxSize)
-					Sizer.MaxSize = Vector2.new(270,tonumber(tonumber(Sizer.MaxSize.Y) + tonumber(v:FindfirstChildOfClass("UISizeConstraint").MaxSize.Y)))
+					Sizer.MaxSize = Vector2.new(270,tonumber(tonumber(Sizer.MaxSize.Y) + tonumber(v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y)))
 					print(v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y)
-					Sizer.MinSize = Vector2.new(270,tonumber(Sizer.MinSize.Y) + tonumber(v:FindfirstChildOfClass("UISizeConstraint").MinSize.Y))
+					Sizer.MinSize = Vector2.new(270,tonumber(Sizer.MinSize.Y) + tonumber(v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y))
 					print(Sizer.." lol")
 				end
 			end
