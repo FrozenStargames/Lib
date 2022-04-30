@@ -264,6 +264,7 @@ ButtonExit.InputBegan:Connect(function(input)
 			if Buttons.ClassName == "TextButton" then
 				Tween2(Buttons,.5,1):Play()
 				Tween3(Buttons,.5,1):Play()
+				break
 			end
 		end
 		Tween2(TextLabel_3,.5,1):Play()
@@ -273,7 +274,6 @@ ButtonExit.InputBegan:Connect(function(input)
 				v.AutoButtonColor = true
 			end
 		end
-		a.Completed:Wait()
 		Tween4(Triangle,.5,1):Play()
 		a.Completed:Wait()
 		Tween(Addition,.6,UDim2.new(0,0,0,460)):Play()
