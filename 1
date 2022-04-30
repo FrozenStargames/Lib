@@ -23,8 +23,7 @@ local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
 local UICorner_3 = Instance.new("UICorner")
 local UICorner_4 = Instance.new("UICorner")
-local UICorner_5 = Instance.new("UICorner")
-local UICorner_6 = Instance.new("UICorner")
+local UICorner_7 = Instance.new("UICorner")
 local Frame_4 = Instance.new("Frame")
 ScreenGuiLe45.Name = "ScreenGuiLe45"
 ScreenGuiLe45.Parent = game.CoreGui
@@ -74,8 +73,8 @@ PrePage.BorderSizePixel = 0
 PrePage.Position = UDim2.new(-0.00117785635, 0, 0.0510063879, 0)
 PrePage.Size = UDim2.new(0, 850, 0, 461)
 
-UICorner_4.Parent = PrePage
-UICorner_4.CornerRadius = UDim.new(0,1)
+UICorner_7.Parent = PrePage
+UICorner_7.CornerRadius = UDim.new(0,1)
 
 TextButton_5.Parent = Main
 TextButton_5.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -168,6 +167,7 @@ local libPage = {}
 function libPage:addPage(name)
 local Page = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
 local Tab = Instance.new("TextButton")
 Page.Name = name.."Page"
 Page.Parent = PrePage
@@ -176,6 +176,7 @@ Page.BorderSizePixel = 0
 Page.Position = UDim2.new(0.014117647, 0, 0.0236464236, 0)
 Page.Size = UDim2.new(0, 827, 0, 440)
 
+UICorner_5.Name = name.."Corner"
 UICorner_5.Parent = Page
 UICorner_5.CornerRadius = UDim.new(0,8)
 
@@ -197,6 +198,7 @@ Tab.Active = false
 Tab.TextTransparency = 1
 Tab.TextWrapped = true
 
+UICorner_6.Name = name.."Corner"
 UICorner_6.Parent = Tab
 UICorner_6.CornerRadius = UDim.new(0,10)
 -----------------------------functions------------------------------------
