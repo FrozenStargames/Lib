@@ -205,11 +205,9 @@ UICorner_6.CornerRadius = UDim.new(0,10)
 Tab.InputBegan:Connect(function(input)
 if input.UserInputType == Enum.UserInputType.MouseButton1 then
 for i,v in pairs(PrePage:GetChildren()) do
-if v == Page then
+v.Visible = false
+end
 Page.Visible = true
-else Page.Visible = false
-end
-end
 end
 end)
 local libSection = {}
