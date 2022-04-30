@@ -325,7 +325,6 @@ ButtonExit.InputBegan:Connect(function(input)
 			if Buttons.ClassName == "TextButton" then
 				Tween2(Buttons,.5,1):Play()
 				Tween3(Buttons,.5,1):Play()
-				break
 			end
 		end
 		Tween2(TextLabel_3,.5,1):Play()
@@ -336,7 +335,7 @@ ButtonExit.InputBegan:Connect(function(input)
 			end
 		end
 		Tween4(Triangle,.5,1):Play()
-		a.Completed:Wait()
+		wait(.5)
 		Tween(Addition,.6,UDim2.new(0,0,0,460)):Play()
 		Tween(Frame_3,.6,UDim2.new(0,0,0,1)):Play()
 		a.Completed:Wait()
@@ -469,7 +468,6 @@ Exit.InputBegan:Connect(function(input)
 		Gui:Destroy()
 	end
 end)
-print(1)
 local delta = nil
 for i,Buttons in pairs(Frame2:GetChildren()) do
 	if Buttons.ClassName == "TextButton" then
@@ -481,7 +479,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
-print(1)
+	print(1)
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
