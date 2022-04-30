@@ -224,7 +224,7 @@ end)
 local libSection = {}
 function libSection:addSection(text)
 local Section = Instance.new("Frame")
-local UIGridLayout = Instance.new("UIGridLayout")
+local GridSec = Instance.new("UIGridLayout")
 local UISizeConstraint = Instance.new("UISizeConstraint")
 local TextLabel = Instance.new("TextLabel")
 local UICorner_8 = Instance.new("UICorner")
@@ -237,11 +237,11 @@ Section.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
 Section.BorderSizePixel = 0
 Section.Size = UDim2.new(0, 270, 0, 0)
 
-UIGridLayout.Name = text.."UIGridLayout"
-UIGridLayout.Parent = Section
-UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(0, 394, 0, 0)
+GridSec.Name = text.."UIGridLayout"
+GridSec.Parent = Section
+GridSec.HorizontalAlignment = Enum.HorizontalAlignment.Center
+GridSec.SortOrder = Enum.SortOrder.LayoutOrder
+GridSec.CellSize = UDim2.new(0, 394, 0, 0)
 
 UISizeConstraint.Name = text.."UISizeConstraint"
 UISizeConstraint.Parent = Section
