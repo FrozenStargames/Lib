@@ -205,10 +205,9 @@ UICorner_6.CornerRadius = UDim.new(0,10)
 Tab.InputBegan:Connect(function(input)
 if input.UserInputType == Enum.UserInputType.MouseButton1 then
 for i,v in pairs(PrePage:GetChildren()) do
+if v.ClassName == "Frame" then
 v.Visible = false
-print(1)
 end
-print(Page.ZIndex)
 Page.Visible = true
 end
 end)
