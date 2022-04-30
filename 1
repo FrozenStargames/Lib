@@ -4,7 +4,7 @@ v11:Destroy()
 end
 end
 local library = {}
-function library:CreateWindow(Name) 
+function library:addWindow(Name) 
 local ScreenGuiLe45 = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local ImageButton = Instance.new("ImageButton")
@@ -277,6 +277,29 @@ Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
+local libButton = {}
+function libButton:addButton(text)
+local Button = Instance.new("TextButton")
+local ButSize = Instance.new("UISizeConstraint")
+
+Button.Name = text.."Button"
+Button.Parent = Section
+Button.Active = false
+Button.BackgroundColor3 = Color3.new(0.411765, 0.498039, 0.964706)
+Button.BorderSizePixel = 0
+Button.Size = UDim2.new(0, 200, 0, 50)
+Button.Font = Enum.Font.Roboto
+Button.Text = ""
+Button.TextColor3 = Color3.new(1, 1, 1)
+Button.TextScaled = true
+Button.TextSize = 14
+Button.TextWrapped = true
+
+ButSize.Name = text.."ButSize"
+ButSize.Parent = TextButton_2
+ButSize.MaxSize = Vector2.new(125, 18)
+ButSize.MinSize = Vector2.new(125, 18)
+
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -509,6 +532,8 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 	end
 end
 PrePage:FindFirstChildOfClass("Frame").Visible = true
+end
+return libButton
 end
 return libSection
 end
