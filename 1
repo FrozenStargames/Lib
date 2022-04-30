@@ -264,6 +264,7 @@ ButtonExit.InputBegan:Connect(function(input)
 			if Buttons.ClassName == "TextButton" then
 				Tween2(Buttons,.5,1):Play()
 				Tween3(Buttons,.5,1):Play()
+				print(Buttons)
 			end
 		end
 		Tween2(TextLabel_3,.5,1):Play()
@@ -274,6 +275,7 @@ ButtonExit.InputBegan:Connect(function(input)
 			end
 		end
 		Tween4(Triangle,.5,1):Play()
+		print(a.Completed)
 		a.Completed:Wait()
 		Tween(Addition,.6,UDim2.new(0,0,0,460)):Play()
 		Tween(Frame_3,.6,UDim2.new(0,0,0,1)):Play()
@@ -427,7 +429,6 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		Buttons.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 				delta = Buttons.AbsolutePosition.Y+8 - Triangle.AbsolutePosition.Y
-				print(delta)
 				Tween5(Triangle,.5,UDim2.new(Triangle.Position.X.Scale,Triangle.Position.X.Offset,Triangle.Position.Y.Scale,Triangle.Position.Y.Offset + delta)):Play()
 			end
 		end)
