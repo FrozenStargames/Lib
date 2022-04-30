@@ -168,6 +168,7 @@ function libPage:addPage(name)
 local Page = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local UICorner_6 = Instance.new("UICorner")
+local UIGridLayout = Instance.new("UIGridLayout")
 local Tab = Instance.new("TextButton")
 Page.Name = name.."Page"
 Page.Parent = PrePage
@@ -176,6 +177,13 @@ Page.BorderSizePixel = 0
 Page.Position = UDim2.new(0.014117647, 0, 0.0236464236, 0)
 Page.Size = UDim2.new(0, 827, 0, 440)
 Page.Visible = false
+
+UIGridLayout.Name = name.."Grid"
+UIGridLayout.Parent = Page
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 270, 0, 5)
+UIGridLayout.FillDirectionMaxCells = 3
 
 UICorner_5.Name = name.."Corner"
 UICorner_5.Parent = Page
