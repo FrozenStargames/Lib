@@ -429,7 +429,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 				delta = Buttons.AbsolutePosition.Y+8 - script.Parent.AbsolutePosition.Y
 				print(delta)
-				Tween5(Trangle,.5,UDim2.new(Trangle.Position.X.Scale,Trangle.Position.X.Offset,Trangle.Position.Y.Scale,Trangle.Position.Y.Offset + delta)):Play()
+				Tween5(Triangle,.5,UDim2.new(Triangle.Position.X.Scale,Triangle.Position.X.Offset,Triangle.Position.Y.Scale,Triangle.Position.Y.Offset + delta)):Play()
 			end
 		end)
 	end
