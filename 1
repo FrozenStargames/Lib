@@ -345,20 +345,6 @@ ButtonExit.InputBegan:Connect(function(input)
 	end
 end)
 
-for i,Sizer in pairs(PrePage:GetDescendants()) do
-	if Sizer.ClassName == "UISizeConstraint" then
-		if Sizer.Parent.Parent.Parent == PrePage then
-			for i,v in pairs(Sizer.Parent:GetChildren()) do
-				if not string.find(tostring(v.ClassName),"UI") then
-					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v.UISizeConstraint.MaxSize.Y)
-					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v.UISizeConstraint.MinSize.Y)
-				end
-			end
-			Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y+30)
-			Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y+30)
-		end
-	end
-end
 local dragstart = nil
 local dragging = nil
 local delta = nil
