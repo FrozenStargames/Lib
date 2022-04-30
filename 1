@@ -282,6 +282,7 @@ local libButton = {}
 function libButton:addButton(text)
 local Button = Instance.new("TextButton")
 local ButSize = Instance.new("UISizeConstraint")
+local ButCorner = Instance.new("UICorner")
 
 Button.Name = text.."Button"
 Button.Parent = Section
@@ -301,6 +302,9 @@ ButSize.Parent = Button
 ButSize.MaxSize = Vector2.new(125, 18)
 ButSize.MinSize = Vector2.new(125, 18)
 
+ButCorner.Name = text.."Corner"
+ButCorner.CornerRadius = UDim.new(0,8)
+ButCorner.Parent = Button
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
