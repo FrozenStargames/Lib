@@ -201,6 +201,70 @@ Tab.TextWrapped = true
 UICorner_6.Name = name.."Corner"
 UICorner_6.Parent = Tab
 UICorner_6.CornerRadius = UDim.new(0,10)
+
+Tab.InputBegan:Connect(function(input)
+if input.UserInputType = Enum.UserInputType.MouseButton1 then
+for i,v in pairs(PrePage:GetChildren()) do
+if v == Page then
+Page.Visible = true
+else Page.Visible = false
+end
+end
+end)
+local libSection = {}
+function libSection:addSection(text)
+local Section = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local UISizeConstraint = Instance.new("UISizeConstraint")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
+local UISizeConstraint_2 = Instance.new("UISizeConstraint")
+
+Section.Name = text.."Section"
+Section.Parent = Page
+Section.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
+Section.BorderSizePixel = 0
+Section.Size = UDim2.new(0, 270, 0, 0)
+
+UIGridLayout.Name = text.."UIGridLayout"
+UIGridLayout.Parent = Section
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 394, 0, 0)
+
+UISizeConstraint.Name = text.."UISizeConstraint"
+UISizeConstraint.Parent = Section
+UISizeConstraint.MaxSize = Vector2.new(270, 0)
+UISizeConstraint.MinSize = Vector2.new(270, 0)
+
+TextLabel.Name = text.."Title"
+TextLabel.Parent = Section
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(1, 1, 1)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.Roboto
+TextLabel.Text = text
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+UISizeConstraint_2.Name = text.."Size"
+UISizeConstraint_2.Parent = TextLabel
+UISizeConstraint_2.MaxSize = Vector2.new(250, 20)
+UISizeConstraint_2.MinSize = Vector2.new(250, 20)
+
+UICorner_8.Name = text.."Corner"
+UICorner_8.Parent = Section
+UICorner_8.CornerRadius = UDim.new(0,8)
+
+local libLabel = {}
+function libLabel:AddLabel(text)
+
+
 -----------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
@@ -432,6 +496,20 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 			end
 		end)
 	end
+for i,Sizer in pairs(PrePage:GetDescendants()) do
+	if Sizer.ClassName == "UISizeConstraint" then
+		if Sizer.Parent.Parent.Parent == PrePage then
+			for i,v in pairs(Sizer.Parent:GetChildren()) do
+				if not string.find(tostring(v.ClassName),"UI") then
+					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v.UISizeConstraint.MaxSize.Y)
+					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v.UISizeConstraint.MinSize.Y)
+				end
+			end
+			Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y+30)
+			Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y+30)
+		end
+	end
+end
 end
 end
 return libPage
