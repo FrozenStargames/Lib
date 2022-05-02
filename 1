@@ -222,91 +222,6 @@ Page.Visible = true
 end
 end)
 
-local libSection = {}
-function libSection:addSection(text)
-local Section = Instance.new("Frame")
-local GridSec = Instance.new("UIGridLayout")
-local UISizeConstraint = Instance.new("UISizeConstraint")
-local TextLabel = Instance.new("TextLabel")
-local UICorner_8 = Instance.new("UICorner")
-local Underline = Instance.new("Frame")
-local UISizeConstraint_2 = Instance.new("UISizeConstraint")
-
-Section.Name = text.."Section"
-Section.Parent = Page
-Section.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
-Section.BorderSizePixel = 0
-Section.Size = UDim2.new(0, 270, 0, 0)
-
-GridSec.Name = text.."UIGridLayout"
-GridSec.Parent = Section
-GridSec.HorizontalAlignment = Enum.HorizontalAlignment.Center
-GridSec.SortOrder = Enum.SortOrder.LayoutOrder
-GridSec.CellSize = UDim2.new(0, 394, 0, 0)
-
-UISizeConstraint.Name = text.."UISizeConstraint"
-UISizeConstraint.Parent = Section
-UISizeConstraint.MaxSize = Vector2.new(270, 0)
-UISizeConstraint.MinSize = Vector2.new(270, 0)
-
-TextLabel.Name = text.."Title"
-TextLabel.Parent = Section
-TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel.BackgroundTransparency = 1
-TextLabel.BorderColor3 = Color3.new(1, 1, 1)
-TextLabel.BorderSizePixel = 0
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.Roboto
-TextLabel.Text = text
-TextLabel.TextColor3 = Color3.new(1, 1, 1)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14
-TextLabel.TextWrapped = true
-TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-
-UISizeConstraint_2.Name = text.."Size"
-UISizeConstraint_2.Parent = TextLabel
-UISizeConstraint_2.MaxSize = Vector2.new(250, 20)
-UISizeConstraint_2.MinSize = Vector2.new(250, 20)
-
-UICorner_8.Name = text.."Corner"
-UICorner_8.Parent = Section
-UICorner_8.CornerRadius = UDim.new(0,8)
-
-Underline.Parent = TextLabel
-Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
-Underline.BorderSizePixel = 0
-Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
-Underline.Size = UDim2.new(0, 270, 0, 1)
-print(1)
-local libButton = {}
-function libButton:addButton(text)
-local Button = Instance.new("TextButton")
-local ButSize = Instance.new("UISizeConstraint")
-local ButCorner = Instance.new("UICorner")
-
-Button.Name = text.."Button"
-Button.Parent = Section
-Button.Active = false
-Button.BackgroundColor3 = Color3.new(0.411765, 0.498039, 0.964706)
-Button.BorderSizePixel = 0
-Button.Size = UDim2.new(0, 200, 0, 50)
-Button.Font = Enum.Font.Roboto
-Button.Text = text
-Button.TextColor3 = Color3.new(1, 1, 1)
-Button.TextScaled = true
-Button.TextSize = 14
-Button.TextWrapped = true
-
-ButSize.Name = text.."ButSize"
-ButSize.Parent = Button
-ButSize.MaxSize = Vector2.new(125, 18)
-ButSize.MinSize = Vector2.new(125, 18)
-
-ButCorner.Name = text.."Corner"
-ButCorner.CornerRadius = UDim.new(0,8)
-ButCorner.Parent = Button
------------------------------functions------------------------------------
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
 local ButtonExit = TextButton_5
@@ -523,6 +438,64 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
+
+local libSection = {}
+function libSection:addSection(text)
+local Section = Instance.new("Frame")
+local GridSec = Instance.new("UIGridLayout")
+local UISizeConstraint = Instance.new("UISizeConstraint")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
+local Underline = Instance.new("Frame")
+local UISizeConstraint_2 = Instance.new("UISizeConstraint")
+
+Section.Name = text.."Section"
+Section.Parent = Page
+Section.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
+Section.BorderSizePixel = 0
+Section.Size = UDim2.new(0, 270, 0, 0)
+
+GridSec.Name = text.."UIGridLayout"
+GridSec.Parent = Section
+GridSec.HorizontalAlignment = Enum.HorizontalAlignment.Center
+GridSec.SortOrder = Enum.SortOrder.LayoutOrder
+GridSec.CellSize = UDim2.new(0, 394, 0, 0)
+
+UISizeConstraint.Name = text.."UISizeConstraint"
+UISizeConstraint.Parent = Section
+UISizeConstraint.MaxSize = Vector2.new(270, 0)
+UISizeConstraint.MinSize = Vector2.new(270, 0)
+
+TextLabel.Name = text.."Title"
+TextLabel.Parent = Section
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(1, 1, 1)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.Roboto
+TextLabel.Text = text
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+UISizeConstraint_2.Name = text.."Size"
+UISizeConstraint_2.Parent = TextLabel
+UISizeConstraint_2.MaxSize = Vector2.new(250, 20)
+UISizeConstraint_2.MinSize = Vector2.new(250, 20)
+
+UICorner_8.Name = text.."Corner"
+UICorner_8.Parent = Section
+UICorner_8.CornerRadius = UDim.new(0,8)
+
+Underline.Parent = TextLabel
+Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
+Underline.BorderSizePixel = 0
+Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
+Underline.Size = UDim2.new(0, 270, 0, 1)
+
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
@@ -537,6 +510,35 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 		end
 	end
 end
+
+local libButton = {}
+function libButton:addButton(text)
+local Button = Instance.new("TextButton")
+local ButSize = Instance.new("UISizeConstraint")
+local ButCorner = Instance.new("UICorner")
+
+Button.Name = text.."Button"
+Button.Parent = Section
+Button.Active = false
+Button.BackgroundColor3 = Color3.new(0.411765, 0.498039, 0.964706)
+Button.BorderSizePixel = 0
+Button.Size = UDim2.new(0, 200, 0, 50)
+Button.Font = Enum.Font.Roboto
+Button.Text = text
+Button.TextColor3 = Color3.new(1, 1, 1)
+Button.TextScaled = true
+Button.TextSize = 14
+Button.TextWrapped = true
+
+ButSize.Name = text.."ButSize"
+ButSize.Parent = Button
+ButSize.MaxSize = Vector2.new(125, 18)
+ButSize.MinSize = Vector2.new(125, 18)
+
+ButCorner.Name = text.."Corner"
+ButCorner.CornerRadius = UDim.new(0,8)
+ButCorner.Parent = Button
+
 PrePage:FindFirstChildOfClass("Frame").Visible = true
 end
 return libButton
