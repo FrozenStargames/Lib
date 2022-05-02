@@ -501,12 +501,10 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 		if Sizer.Parent.Parent.Parent == PrePage then
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
-					Sizer.MaxSize = Vector2.new(270,tonumber(tonumber(Sizer.MaxSize.Y) + tonumber(v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y)))
-					Sizer.MinSize = Vector2.new(270,tonumber(Sizer.MinSize.Y) + tonumber(v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y))
+					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+5)
+					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+5)
 				end
 			end
-			Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y+10)
-			Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y+10)
 		end
 	end
 end
