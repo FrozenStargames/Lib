@@ -519,13 +519,13 @@ Button.TextWrapped = true
 
 ButSize.Name = text.."ButSize"
 ButSize.Parent = Button
-ButSize.MaxSize = Vector2.new(125, 18)
-ButSize.MinSize = Vector2.new(125, 18)
+ButSize.MaxSize = Vector2.new(150, 19)
+ButSize.MinSize = Vector2.new(150, 19)
 
 ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
-print(1)
+print(99)
 end
 return libButton
 for i,Sizer in pairs(PrePage:GetDescendants()) do
@@ -534,8 +534,8 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
 				print(2)
-					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y)
-					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y)
+					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+7)
+					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+7)
 				end
 			end
 		end
