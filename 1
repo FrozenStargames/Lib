@@ -1,4 +1,3 @@
-print(5)
 for i,v11 in pairs(game.CoreGui:GetChildren()) do
 if v11.Name == "ScreenGuiLe45" then
 v11:Destroy()
@@ -525,14 +524,13 @@ ButSize.MinSize = Vector2.new(150, 19)
 ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
-print(99)
 end
-for i,Sizer in pairs(PrePage:GetDescendants()) do
+delay(1,function()
+    for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
-				print(2)
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
 					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+6)
 				end
@@ -540,7 +538,7 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 		end
 	end
 end
-
+end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
 return libButton
 end
