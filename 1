@@ -527,7 +527,6 @@ ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 print(99)
 end
-return libButton
 for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
 		if Sizer.Parent.Parent.Parent == PrePage then
@@ -543,6 +542,7 @@ for i,Sizer in pairs(PrePage:GetDescendants()) do
 end
 
 PrePage:FindFirstChildOfClass("Frame").Visible = true
+return libButton
 end
 return libSection
 end
