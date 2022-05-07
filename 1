@@ -502,6 +502,7 @@ Underline.Size = UDim2.new(0, 270, 0, 1)
 
 local libButton = {}
 function libButton:addButton(text,callback)
+local callback = callback or function() end
 local Button = Instance.new("TextButton")
 local ButSize = Instance.new("UISizeConstraint")
 local ButCorner = Instance.new("UICorner")
@@ -518,10 +519,6 @@ Button.TextColor3 = Color3.new(1, 1, 1)
 Button.TextScaled = true
 Button.TextSize = 14
 Button.TextWrapped = true
-
-if callback == nil then
-    callback = function() end
-end
 
 Button.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
