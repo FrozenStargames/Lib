@@ -1,4 +1,3 @@
-print(71)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -265,7 +264,7 @@ ButtonOpenImage.InputBegan:Connect(function(input)
 		end
 			for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
-				Tween(Buttons,0,UDim2.new(0,145,0,28))
+				Tween(Buttons,0,UDim2.new(0,145,0,28)):Play()
 				Tween2(Buttons,.5,0):Play()
 				Tween3(Buttons,.5,0):Play()
 			end
@@ -284,7 +283,7 @@ ButtonExit.InputBegan:Connect(function(input)
 		Tween(ButtonExit,0,UDim2.new(0,0,0,460)):Play()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
-				Tween(Buttons,0,UDim2.new(0,0,0,28))
+				Tween(Buttons,0,UDim2.new(0,0,0,28)):Play()
 				Tween2(Buttons,.5,1):Play()
 				Tween3(Buttons,.5,1):Play()
 			end
@@ -499,7 +498,6 @@ Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
 
-print(2)
 local libButton = {}
 function libButton:addButton(text,callback)
 local callback = callback or function() end
@@ -519,11 +517,11 @@ Button.TextColor3 = Color3.new(1, 1, 1)
 Button.TextScaled = true
 Button.TextSize = 14
 Button.TextWrapped = true
-print(89)
+
 Button.MouseButton1Down:Connect(function()
         pcall(callback)
 end)
-print(66)
+
 ButSize.Name = text.."ButSize"
 ButSize.Parent = Button
 ButSize.MaxSize = Vector2.new(150, 19)
@@ -548,7 +546,6 @@ delay(1,function()
 end
 end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
-print(1)
 return libButton
 end
 return libSection
