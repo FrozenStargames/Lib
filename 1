@@ -502,7 +502,7 @@ Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
-end
+
 local libButton = {}
 function libButton:addButton(text,callback)
 local callback = callback or function() end
@@ -650,6 +650,7 @@ end
 end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
 return libButton
+end
 return libSection
 end
 return libPage
