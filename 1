@@ -19,6 +19,11 @@ local function Tween5(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Position = Size1})
 	return a
 end
+local function Tween6(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{TextColor = Size1})
+	return a
+end
+
 for i,v11 in pairs(game.CoreGui:GetChildren()) do
 if v11.Name == "ScreenGuiLe45" then
 v11:Destroy()
@@ -531,6 +536,104 @@ ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 end
+local libToggle = {}
+function libToggle:addToggle(text,value,callback)
+local callback = callback or function() end
+local ToggleAll = Instance.new("Frame")
+local UISizeConstraint_4 = Instance.new("UISizeConstraint")
+local UIGridLayout_3 = Instance.new("UIGridLayout")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIPadding = Instance.new("UIPadding")
+local UISizeConstraint_5 = Instance.new("UISizeConstraint")
+local ToggleBack = Instance.new("Frame")
+local UISizeConstraint_6 = Instance.new("UISizeConstraint")
+local Frame_2 = Instance.new("Frame")
+local UISizeConstraint_7 = Instance.new("UISizeConstraint")
+
+ToggleAll.Name = text.."Toggle"
+ToggleAll.Parent = Section
+ToggleAll.BackgroundColor3 = Color3.new(1, 1, 1)
+ToggleAll.BackgroundTransparency = 1
+ToggleAll.BorderSizePixel = 0
+ToggleAll.Size = UDim2.new(0, 100, 0, 100)
+
+UISizeConstraint_4.Parent = ToggleAll
+UISizeConstraint_4.MaxSize = Vector2.new(270, 20)
+UISizeConstraint_4.MinSize = Vector2.new(270, 20)
+
+UIGridLayout_3.Parent = ToggleAll
+UIGridLayout_3.FillDirection = Enum.FillDirection.Vertical
+UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
+UIGridLayout_3.CellPadding = UDim2.new(0, -65, 0, 100)
+UIGridLayout_3.CellSize = UDim2.new(0, 210, 0, 140)
+UIGridLayout_3.FillDirectionMaxCells = 2
+UIGridLayout_3.StartCorner = Enum.StartCorner.BottomLeft
+
+TextLabel_2.Parent = ToggleAll
+TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel_2.BackgroundTransparency = 1
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0, 0, 0.0500000007, 0)
+TextLabel_2.Size = UDim2.new(0, 134, 0, 18)
+TextLabel_2.ZIndex = 4
+TextLabel_2.Font = Enum.Font.Roboto
+TextLabel_2.Text = text
+TextLabel_2.TextColor3 = Color3.new(0.0196078, 0.364706, 0.419608)
+TextLabel_2.TextSize = 14
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+UIPadding.Parent = TextLabel_2
+
+UISizeConstraint_5.Parent = TextLabel_2
+UISizeConstraint_5.MaxSize = Vector2.new(200, 18)
+UISizeConstraint_5.MinSize = Vector2.new(200, 18)
+
+ToggleBack.Name = "ToggleBack"
+ToggleBack.Parent = ToggleAll
+ToggleBack.BackgroundColor3 = Color3.new(0.439216, 0.423529, 0.690196)
+ToggleBack.BorderColor3 = Color3.new(0.168627, 0.160784, 0.262745)
+ToggleBack.BorderSizePixel = 0
+ToggleBack.Position = UDim2.new(0.981518567, -100, 0.549999714, 0)
+ToggleBack.Size = UDim2.new(0, 100, 0, 100)
+
+UISizeConstraint_6.Parent = ToggleBack
+UISizeConstraint_6.MaxSize = Vector2.new(36, 16)
+UISizeConstraint_6.MinSize = Vector2.new(36, 16)
+
+Frame_2.Parent = ToggleBack
+Frame_2.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame_2.Position = UDim2.new(0, 0, 0.0439999998, -1)
+Frame_2.Size = UDim2.new(0, 25, 0, 14)
+
+UISizeConstraint_7.Parent = Frame_2
+UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
+UISizeConstraint_7.MinSize = Vector2.new(16, 16)
+
+value = false
+for i,Toggle1 in pairs(PrePage:GetDescendants()) do
+	if Toggle1.Name == "ToggleBack" then
+		Toggle1.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				if Toggle1.Frame.Position.X.Offset == 0 then
+					if value == false then
+					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,20,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
+					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(10, 209, 239)):Play()
+					value = true
+				else
+					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,0,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
+					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(5, 93, 107)):Play()
+					value = false
+					end
+				end
+			end
+		end)
+	end
+end
+ToggleBack.MouseButton1Down:Connect(function()
+pcall(callback)
+end)
+end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
@@ -546,7 +649,9 @@ delay(1,function()
 end
 end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
+return libToggle
 return libButton
+end
 end
 return libSection
 end
