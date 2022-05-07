@@ -446,7 +446,6 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
-end
 local libSection = {}
 function libSection:addSection(text)
 local Section = Instance.new("Frame")
@@ -652,6 +651,7 @@ end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
 return libButton
 return libSection
+end
 return libPage
 end
 return library
