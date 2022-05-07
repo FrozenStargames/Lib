@@ -519,15 +519,12 @@ Button.TextScaled = true
 Button.TextSize = 14
 Button.TextWrapped = true
 
-if callback == nil then
-callback = function()
-end
+local callback = callback or function() end
 
-Button.InputBegan:Connect(function(input)
-if input.UserInputType == Enum.UserInputType.MouseButton1 then
-callback
-end
+Button.MouseButton1Down:Connect(function()
+    pcall(callback)
 end)
+
 ButSize.Name = text.."ButSize"
 ButSize.Parent = Button
 ButSize.MaxSize = Vector2.new(150, 19)
