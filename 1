@@ -519,11 +519,11 @@ Button.TextColor3 = Color3.new(1, 1, 1)
 Button.TextScaled = true
 Button.TextSize = 14
 Button.TextWrapped = true
-
+print(89)
 Button.MouseButton1Down:Connect(function()
         pcall(callback)
 end)
-
+print(66)
 ButSize.Name = text.."ButSize"
 ButSize.Parent = Button
 ButSize.MaxSize = Vector2.new(150, 19)
@@ -548,6 +548,7 @@ delay(1,function()
 end
 end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
+print(1)
 return libButton
 end
 return libSection
