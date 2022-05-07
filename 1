@@ -520,10 +520,8 @@ Button.TextScaled = true
 Button.TextSize = 14
 Button.TextWrapped = true
 
-Button.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+Button.MouseButton1Down:Connect(function()
         pcall(callback)
-    end
 end)
 
 ButSize.Name = text.."ButSize"
