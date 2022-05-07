@@ -270,7 +270,7 @@ ButtonOpenImage.InputBegan:Connect(function(input)
 		end
 			for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
-				Tween(Buttons,0,UDim2.new(0,145,0,0)):[;ay()
+				Tween(Buttons,0,UDim2.new(0,145,0,0)):Play()
 				Tween2(Buttons,.5,0):Play()
 				Tween3(Buttons,.5,0):Play()
 			end
@@ -289,7 +289,6 @@ ButtonExit.InputBegan:Connect(function(input)
 		Tween(ButtonExit,0,UDim2.new(0,0,0,460)):Play()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
-				Tween(Buttons,0,UDim2.new(0,0,0,28)):Play()
 				Tween2(Buttons,.3,1):Play()
 				Tween3(Buttons,.3,1):Play()
 			end
@@ -304,7 +303,7 @@ ButtonExit.InputBegan:Connect(function(input)
 		a.Completed:Wait()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
-				Tween(Buttons,0,UDim2.new()):Play()
+				Tween(Buttons,0,UDim2.new(0,0,0,28)):Play()
 			end
 		end
 		Tween4(Triangle,.3,1):Play()
