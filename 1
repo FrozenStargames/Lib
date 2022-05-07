@@ -537,7 +537,7 @@ ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 end
-local libToggle = {}
+--[[local libToggle = {}
 function libToggle:addToggle(text,value,callback)
 local callback = callback or function() end
 local ToggleAll = Instance.new("Frame")
@@ -634,7 +634,7 @@ end
 ToggleBack.MouseButton1Down:Connect(function()
 pcall(callback)
 end)
-end
+end]]
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
