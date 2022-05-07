@@ -1,3 +1,24 @@
+local a = nil
+local function Tween(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
+	return a
+end
+local function Tween2(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{TextTransparency = Size1})
+	return a
+end
+local function Tween3(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{BackgroundTransparency = Size1})
+	return a
+end
+local function Tween4(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{ImageTransparency = Size1})
+	return a
+end
+local function Tween5(Object,time1,Size1)
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Position = Size1})
+	return a
+end
 for i,v11 in pairs(game.CoreGui:GetChildren()) do
 if v11.Name == "ScreenGuiLe45" then
 v11:Destroy()
@@ -196,7 +217,7 @@ Tab.BackgroundTransparency = 1
 Tab.BorderColor3 = Color3.new(0.615686, 0, 0)
 Tab.BorderSizePixel = 0
 Tab.Position = UDim2.new(0, 0, 0, 33)
-Tab.Size = UDim2.new(0, 145, 0, 28)
+Tab.Size = UDim2.new(0, 0, 0, 28)
 Tab.ZIndex = 5
 Tab.Font = Enum.Font.TitilliumWeb
 Tab.TextColor3 = Color3.new(1, 1, 1)
@@ -226,27 +247,6 @@ local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
 local ButtonExit = TextButton_5
 local Trangle = ImageLabel
-local a = nil
-local function Tween(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
-	return a
-end
-local function Tween2(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{TextTransparency = Size1})
-	return a
-end
-local function Tween3(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{BackgroundTransparency = Size1})
-	return a
-end
-local function Tween4(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{ImageTransparency = Size1})
-	return a
-end
-local function Tween5(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Position = Size1})
-	return a
-end
 ButtonOpenImage.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
 		if Trangle.ImageTransparency == 1 then
@@ -264,6 +264,7 @@ ButtonOpenImage.InputBegan:Connect(function(input)
 		end
 			for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
+				Tween(Buttons,0,UDim2.new(0,145,0,28))
 				Tween2(Buttons,.5,0):Play()
 				Tween3(Buttons,.5,0):Play()
 			end
@@ -282,6 +283,7 @@ ButtonExit.InputBegan:Connect(function(input)
 		Tween(ButtonExit,0,UDim2.new(0,0,0,460)):Play()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
+				Tween(Buttons,0,UDim2.new(0,0,0,28))
 				Tween2(Buttons,.5,1):Play()
 				Tween3(Buttons,.5,1):Play()
 			end
@@ -498,7 +500,7 @@ Underline.Size = UDim2.new(0, 270, 0, 1)
 
 
 local libButton = {}
-function libButton:addButton(text)
+function libButton:addButton(text,callback)
 local Button = Instance.new("TextButton")
 local ButSize = Instance.new("UISizeConstraint")
 local ButCorner = Instance.new("UICorner")
@@ -516,6 +518,15 @@ Button.TextScaled = true
 Button.TextSize = 14
 Button.TextWrapped = true
 
+if callback == nil then
+callback = function()
+end
+
+Button.InputBegan:Connect(function(input)
+if input.UserInputType == Enum.UserInputType.MouseButton1 then
+callback
+end
+end)
 ButSize.Name = text.."ButSize"
 ButSize.Parent = Button
 ButSize.MaxSize = Vector2.new(150, 19)
