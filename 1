@@ -1,4 +1,4 @@
-print(7)
+print(8)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -289,11 +289,11 @@ ButtonExit.InputBegan:Connect(function(input)
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
 				Tween(Buttons,0,UDim2.new(0,0,0,28)):Play()
-				Tween2(Buttons,.5,1):Play()
-				Tween3(Buttons,.5,1):Play()
+				Tween2(Buttons,.3,1):Play()
+				Tween3(Buttons,.3,1):Play()
 			end
 		end
-		Tween2(TextLabel_3,.5,1):Play()
+		Tween2(TextLabel_3,.3,1):Play()
 		for i,v in pairs(Main:GetDescendants()) do
 			if v.Parent ~= Frame2 and v.ClassName == "TextButton" then
 				v.Active = true
@@ -306,12 +306,12 @@ ButtonExit.InputBegan:Connect(function(input)
 				Tween(Buttons,0,UDim2.new()):Play()
 			end
 		end
-		Tween4(Triangle,.5,1):Play()
-		wait(.5)
-		Tween(Addition,.6,UDim2.new(0,0,0,460)):Play()
-		Tween(Frame_3,.6,UDim2.new(0,0,0,1)):Play()
+		Tween4(Triangle,.3,1):Play()
 		a.Completed:Wait()
-		Tween(ButtonOpenImage,.5,UDim2.new(0,31,0,24)):Play()
+		Tween(Addition,.4,UDim2.new(0,0,0,460)):Play()
+		Tween(Frame_3,.4,UDim2.new(0,0,0,1)):Play()
+		a.Completed:Wait()
+		Tween(ButtonOpenImage,.3,UDim2.new(0,31,0,24)):Play()
 		end
 	end
 end)
