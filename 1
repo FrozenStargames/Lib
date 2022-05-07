@@ -189,7 +189,7 @@ TextLabel_3.TextTransparency = 1
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Center
 TextLabel_3.TextYAlignment = Enum.TextYAlignment.Center
-
+end
 local libPage = {}
 function libPage:addPage(name)
 local Page = Instance.new("Frame")
@@ -446,7 +446,7 @@ for i,Buttons in pairs(Frame2:GetChildren()) do
 		end)
 	end
 	end
-
+end
 local libSection = {}
 function libSection:addSection(text)
 local Section = Instance.new("Frame")
@@ -503,7 +503,7 @@ Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
-
+end
 local libButton = {}
 function libButton:addButton(text,callback)
 local callback = callback or function() end
@@ -651,9 +651,6 @@ end
 end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
 return libButton
-end
 return libSection
-end
 return libPage
-end
 return library
