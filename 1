@@ -507,8 +507,8 @@ Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
-
-function libSection:addButton(text,callback)
+local libFill = {}
+function libFill:addButton(text,callback)
 local callback = callback or function() end
 local Button = Instance.new("TextButton")
 local ButSize = Instance.new("UISizeConstraint")
@@ -540,7 +540,7 @@ ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 end
-function libSection:addToggle(text,value,callback)
+function libFill:addToggle(text,value,callback)
 local value = false
 local callback = callback or function() end
 local ToggleAll = Instance.new("Frame")
@@ -653,6 +653,7 @@ delay(1,function()
 end
 end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
+return libFill
 end
 return libSection
 end
