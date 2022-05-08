@@ -625,7 +625,6 @@ for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 	if Toggle1.Name == "ToggleBack" then
 		Toggle1.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-				if Toggle1.Frame.Position.X.Offset == 0 then
 					if value == false then
 					print(value)
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,20,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
@@ -635,7 +634,6 @@ for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,0,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
 					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(5, 93, 107)):Play()
 					value = false
-					end
 				end
 			end
 		end)
