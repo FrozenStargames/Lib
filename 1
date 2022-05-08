@@ -1,4 +1,4 @@
-print(859)
+print(9)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -621,17 +621,15 @@ UISizeConstraint_7.Parent = Frame_2
 UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
 UISizeConstraint_7.MinSize = Vector2.new(16, 16)
 local value = value or false
-value = false
 for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 	if Toggle1.Name == "ToggleBack" then
 		Toggle1.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 				if Toggle1.Frame.Position.X.Offset == 0 then
 					if value == false then
+					print(value)
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,20,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
-					print(2)
 					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(10, 209, 239)):Play()
-					print(1)
 					value = true
 				else
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,0,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
