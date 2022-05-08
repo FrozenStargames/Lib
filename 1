@@ -21,7 +21,7 @@ local function Tween5(Object,time1,Size1)
 	return a
 end
 local function Tween6(Object,time1,Size1)
-	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{TextColor = Size1})
+	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{TextColor3 = Size1})
 	return a
 end
 
@@ -541,7 +541,6 @@ ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 end
 function libFill:addToggle(text,value,callback)
-local value = false
 local callback = callback or function() end
 local ToggleAll = Instance.new("Frame")
 local UISizeConstraint_4 = Instance.new("UISizeConstraint")
@@ -621,7 +620,7 @@ Corner.CornerRadius = UDim.new(1,0)
 UISizeConstraint_7.Parent = Frame_2
 UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
 UISizeConstraint_7.MinSize = Vector2.new(16, 16)
-
+local value = value or false
 value = false
 for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 	if Toggle1.Name == "ToggleBack" then
@@ -630,7 +629,9 @@ for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 				if Toggle1.Frame.Position.X.Offset == 0 then
 					if value == false then
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,20,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
+					print(2)
 					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(10, 209, 239)):Play()
+					print(1)
 					value = true
 				else
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,0,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
