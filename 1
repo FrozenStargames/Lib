@@ -248,14 +248,14 @@ end
 Page.Visible = true
 end
 end)
-
+local closee = false
 local UIS = game:GetService("UserInputService")
 local ButtonOpenImage = ImageButton
 local ButtonExit = TextButton_5
 local Trangle = ImageLabel
 ButtonOpenImage.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		if Trangle.ImageTransparency == 1 then
+		if closee = false then
 			Tween(ButtonOpenImage,.5,UDim2.new(0,0,0,24)):Play()
 			a.Completed:Wait()
 			Tween(ButtonExit,0,UDim2.new(0,683,0,460)):Play()
@@ -277,15 +277,17 @@ ButtonOpenImage.InputBegan:Connect(function(input)
 		end
 		Tween2(TextLabel_3,.3,0):Play()
 		Tween4(Trangle,.3,0):Play()
+		closee = true
 		end
 		end
 end)
 local ButtonExit = TextButton_5
 local ButtonOpenImage = ImageButton
 local Triangle = ImageLabel
+
 ButtonExit.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		if Triangle.ImageTransparency == 0 then
+		if closee = true then
 		Tween(ButtonExit,0,UDim2.new(0,0,0,460)):Play()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
@@ -293,7 +295,7 @@ ButtonExit.InputBegan:Connect(function(input)
 				Tween3(Buttons,.3,1):Play()
 			end
 		end
-		Tween2(TextLabel_3,.3,1):Play()
+		Tween2(TextLabel_3,.2,1):Play()
 		for i,v in pairs(Main:GetDescendants()) do
 			if v.Parent ~= Frame2 and v.ClassName == "TextButton" then
 				v.Active = true
@@ -312,6 +314,7 @@ ButtonExit.InputBegan:Connect(function(input)
 		Tween(Frame_3,.4,UDim2.new(0,0,0,1)):Play()
 		a.Completed:Wait()
 		Tween(ButtonOpenImage,.3,UDim2.new(0,31,0,24)):Play()
+		closee = false
 		end
 	end
 end)
