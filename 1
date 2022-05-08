@@ -553,6 +553,8 @@ local ToggleBack = Instance.new("Frame")
 local UISizeConstraint_6 = Instance.new("UISizeConstraint")
 local Frame_2 = Instance.new("Frame")
 local UISizeConstraint_7 = Instance.new("UISizeConstraint")
+local Corner = Instance.new("UICorner")
+local Corner2 = Instance.new("UICorner")
 
 ToggleAll.Name = text.."Toggle"
 ToggleAll.Parent = Section
@@ -584,7 +586,7 @@ TextLabel_2.ZIndex = 4
 TextLabel_2.Font = Enum.Font.Roboto
 TextLabel_2.Text = text
 TextLabel_2.TextColor3 = Color3.new(0.0196078, 0.364706, 0.419608)
-TextLabel_2.TextSize = 14
+TextLabel_2.TextSize = 16
 TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 
 UIPadding.Parent = TextLabel_2
@@ -601,6 +603,9 @@ ToggleBack.BorderSizePixel = 0
 ToggleBack.Position = UDim2.new(0.981518567, -100, 0.549999714, 0)
 ToggleBack.Size = UDim2.new(0, 100, 0, 100)
 
+Corner2.Parent = ToggleBack
+Corner2.CornerRadius = UDim.new(1,0)
+
 UISizeConstraint_6.Parent = ToggleBack
 UISizeConstraint_6.MaxSize = Vector2.new(36, 16)
 UISizeConstraint_6.MinSize = Vector2.new(36, 16)
@@ -609,6 +614,9 @@ Frame_2.Parent = ToggleBack
 Frame_2.BackgroundColor3 = Color3.new(1, 1, 1)
 Frame_2.Position = UDim2.new(0, 0, 0.0439999998, -1)
 Frame_2.Size = UDim2.new(0, 25, 0, 14)
+
+Corner.Parent = Frame_2
+Corner.CornerRadius = UDim.new(1,0)
 
 UISizeConstraint_7.Parent = Frame_2
 UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
