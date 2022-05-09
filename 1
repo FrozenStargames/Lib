@@ -625,11 +625,10 @@ UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
 UISizeConstraint_7.MinSize = Vector2.new(16, 16)
 local value = false
 local callback = callback or function() end
-for i,Toggle1 in pairs(PrePage:GetDescendants()) do
-	if Toggle1.Name == "ToggleBack" then
-		Toggle1.InputBegan:Connect(function(input)
+		ToggleBack.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 					if value == false then
+					pcall(callback,value)
 					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,20,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
 					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(10, 209, 239)):Play()
 					value = true
@@ -640,8 +639,6 @@ for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 				end
 			end
 		end)
-	end
-end
 function thing:Set(arg)
 pcall(callback,arg)
 end
