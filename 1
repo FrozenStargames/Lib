@@ -626,17 +626,16 @@ UISizeConstraint_7.MinSize = Vector2.new(16, 16)
 local value = false
 local callback = callback or function() end
 		ToggleBack.InputBegan:Connect(function(input)
-		print(2)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 					if value == false then
 					pcall(callback,value)
-					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,20,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
-					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(10, 209, 239)):Play()
+					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,20,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
+					Tween6(TextLabel_2,.3,Color3.fromRGB(10, 209, 239)):Play()
 					value = true
 				else
 					pcall(callback,value)
-					Tween5(Toggle1.Frame,.3,UDim2.new(Toggle1.Frame.Position.X.Scale,0,Toggle1.Frame.Position.Y.Scale,Toggle1.Frame.Position.Y.Offset)):Play()
-					Tween6(Toggle1.Parent.TextLabel,.3,Color3.fromRGB(5, 93, 107)):Play()
+					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,0,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
+					Tween6(TextLabel_2,.3,Color3.fromRGB(5, 93, 107)):Play()
 					value = false
 				end
 			end
