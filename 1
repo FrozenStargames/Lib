@@ -543,7 +543,8 @@ ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 end
-function libFill:addToggle(text,value,callback)
+function libFill:addToggle(text,callback)
+local thing = {}
 local ToggleAll = Instance.new("Frame")
 local UISizeConstraint_4 = Instance.new("UISizeConstraint")
 local UIGridLayout_3 = Instance.new("UIGridLayout")
@@ -622,7 +623,8 @@ Corner.CornerRadius = UDim.new(1,0)
 UISizeConstraint_7.Parent = Frame_2
 UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
 UISizeConstraint_7.MinSize = Vector2.new(16, 16)
-local value = value or false
+local value = false
+local callback = callback or function() end
 for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 	if Toggle1.Name == "ToggleBack" then
 		Toggle1.InputBegan:Connect(function(input)
@@ -640,10 +642,9 @@ for i,Toggle1 in pairs(PrePage:GetDescendants()) do
 		end)
 	end
 end
-local callback = callback or function() end
-ToggleBack.MouseButton1Down:Connect(function()
-pcall(callback)
-end)
+function thing:Set(arg)
+pcall(callback,arg)
+end
 end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
