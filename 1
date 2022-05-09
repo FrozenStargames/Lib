@@ -1,4 +1,4 @@
-print(91)
+print(1)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -626,6 +626,7 @@ UISizeConstraint_7.MinSize = Vector2.new(16, 16)
 local value = false
 local callback = callback or function() end
 		ToggleBack.InputBegan:Connect(function(input)
+		print(2)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 					if value == false then
 					pcall(callback,value)
@@ -638,10 +639,7 @@ local callback = callback or function() end
 					value = false
 				end
 			end
-		end)
-function thing:Set(arg)
-pcall(callback,arg)
-end
+	end)
 end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
