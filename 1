@@ -628,15 +628,15 @@ local callback = callback or function() end
 		ToggleBack.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 					if value == false then
-					pcall(callback,value)
 					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,20,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
 					Tween6(TextLabel_2,.3,Color3.fromRGB(10, 209, 239)):Play()
 					value = true
-				else
 					pcall(callback,value)
+				else
 					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,0,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
 					Tween6(TextLabel_2,.3,Color3.fromRGB(5, 93, 107)):Play()
 					value = false
+					pcall(callback,value)
 				end
 			end
 	end)
