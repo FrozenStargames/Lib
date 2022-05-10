@@ -1,4 +1,4 @@
-print(1)
+print(12)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -666,12 +666,14 @@ Frame.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0, -10, 0.949999988, 0)
 Frame.Size = UDim2.new(0, 270, 0, 1)
-end
 
 while true do
 	wait(.1)
 	TextLabel.Text = text
 end
+
+end
+
 
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
