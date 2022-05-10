@@ -296,13 +296,14 @@ ButtonExit.InputBegan:Connect(function(input)
 			end
 		end
 		Tween2(TextLabel_3,.2,1):Play()
+		a.Completed:Wait()
+		print(1)
 		for i,v in pairs(Main:GetDescendants()) do
 			if v.Parent ~= Frame2 and v.ClassName == "TextButton" then
 				v.Active = true
 				v.AutoButtonColor = true
 			end
 		end
-		a.Completed:Wait()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
 				Tween(Buttons,0,UDim2.new(0,0,0,28)):Play()
