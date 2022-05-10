@@ -255,9 +255,8 @@ local ButtonExit = TextButton_5
 local Trangle = ImageLabel
 ButtonOpenImage.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		if TextLabel_3.TextTransparency = 1 then
+		if TextLabel_3.TextTransparency == 1 then
 			Tween(ButtonOpenImage,.5,UDim2.new(0,0,0,24)):Play()
-			wait(.5)
 			Tween(ButtonExit,0,UDim2.new(0,683,0,460)):Play()
 		Tween(Addition,.4,UDim2.new(0,172,0,460)):Play()
 		Tween(Frame_3,.4,UDim2.new(0,171,0,1)):Play()
@@ -286,7 +285,7 @@ local Triangle = ImageLabel
 
 ButtonExit.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		if TextLabel_3.TextTransparency = 0 then
+		if TextLabel_3.TextTransparency == 0 then
 		Tween(ButtonExit,0,UDim2.new(0,0,0,460)):Play()
 		for i,Buttons in pairs(Frame2:GetChildren()) do
 			if Buttons.ClassName == "TextButton" then
