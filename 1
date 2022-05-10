@@ -1,4 +1,4 @@
-print(12)
+print(11)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -667,11 +667,15 @@ Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0, -10, 0.949999988, 0)
 Frame.Size = UDim2.new(0, 270, 0, 1)
 
+
+local lk = coroutine.create(function())
 while true do
-	wait(.1)
+wait(.1)
+print(1)
 	TextLabel.Text = text
 end
-
+end)
+coroutine.resume(lk)
 end
 
 
