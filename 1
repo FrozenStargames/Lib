@@ -641,6 +641,35 @@ local callback = callback or function() end
 			end
 	end)
 end
+function libFill:addLabel(text)
+local TextLabel = Instance.new("TextLabel")
+local UISizeConstraint_2 = Instance.new("UISizeConstraint")
+local Frame = Instance.new("Frame")
+
+TextLabel.Parent = Section
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(1, 1, 1)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.Roboto
+TextLabel.Text = text
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+UISizeConstraint_2.Parent = TextLabel
+UISizeConstraint_2.MaxSize = Vector2.new(250, 20)
+UISizeConstraint_2.MinSize = Vector2.new(250, 20)
+
+Frame.Parent = TextLabel
+Frame.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, -10, 0.949999988, 0)
+Frame.Size = UDim2.new(0, 270, 0, 1)
+
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
