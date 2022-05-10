@@ -668,6 +668,11 @@ Frame.Position = UDim2.new(0, -10, 0.949999988, 0)
 Frame.Size = UDim2.new(0, 270, 0, 1)
 end
 
+while true do
+	wait(.1)
+	TextLabel.Text = text
+end
+
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
