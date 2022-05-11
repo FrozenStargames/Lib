@@ -671,6 +671,136 @@ Frame.Size = UDim2.new(0, 270, 0, 1)
 pcall(callback,TextLabel)
 
 end
+function libFill:addSlider(text,min,max,callback)
+local callback = callback or function() end
+local Slider = Instance.new("Frame")
+local UISizeConstraint_8 = Instance.new("UISizeConstraint")
+local ButtonSlid = Instance.new("TextButton")
+local UISizeConstraint_9 = Instance.new("UISizeConstraint")
+local Slid = Instance.new("Frame")
+local UISizeConstraint_10 = Instance.new("UISizeConstraint")
+local SlidValue = Instance.new("TextLabel")
+local UISizeConstraint_11 = Instance.new("UISizeConstraint")
+local Info = Instance.new("TextLabel")
+local Corner = Instance.new("UICorner")
+
+Slider.Name = "Slider"
+Slider.Parent = Section
+Slider.BackgroundColor3 = Color3.new(1, 1, 1)
+Slider.BackgroundTransparency = 1
+Slider.BorderSizePixel = 0
+Slider.Position = UDim2.new(0, 0, INF, 0)
+Slider.Size = UDim2.new(0, 268, 0, 20)
+
+UISizeConstraint_8.Parent = Slider
+UISizeConstraint_8.MaxSize = Vector2.new(269, 20)
+UISizeConstraint_8.MinSize = Vector2.new(269, 20)
+
+ButtonSlid.Name = "ButtonSlid"
+ButtonSlid.Parent = Slider
+ButtonSlid.BackgroundColor3 = Color3.new(1, 1, 1)
+ButtonSlid.BorderSizePixel = 0
+ButtonSlid.Position = UDim2.new(0, 0, 0, -2)
+ButtonSlid.Size = UDim2.new(0, 20, 0, 10)
+ButtonSlid.ZIndex = 2
+ButtonSlid.Font = Enum.Font.Roboto
+ButtonSlid.Text = ""
+ButtonSlid.TextColor3 = Color3.new(0, 0, 0)
+ButtonSlid.TextSize = 14
+
+Corner.Parent = ButtonSlid
+Corner.CornerRadius = UDim.new(1,0)
+
+UISizeConstraint_9.Parent = ButtonSlid
+UISizeConstraint_9.MaxSize = Vector2.new(10, 10)
+UISizeConstraint_9.MinSize = Vector2.new(10, 10)
+
+Slid.Name = "Slid"
+Slid.Parent = Slider
+Slid.BackgroundColor3 = Color3.new(0.439216, 0.423529, 0.690196)
+Slid.BorderSizePixel = 0
+Slid.Position = UDim2.new(0, 1, 0, 0)
+Slid.Size = UDim2.new(0, 270, 0, 5)
+
+UISizeConstraint_10.Parent = Slid
+UISizeConstraint_10.MaxSize = Vector2.new(268, 5)
+UISizeConstraint_10.MinSize = Vector2.new(268, 5)
+
+SlidValue.Name = "SlidValue"
+SlidValue.Parent = Slider
+SlidValue.BackgroundColor3 = Color3.new(0.27451, 0.266667, 0.435294)
+SlidValue.BorderSizePixel = 0
+SlidValue.Position = UDim2.new(0.00370370364, 0, 0.294, -1)
+SlidValue.Size = UDim2.new(0, 268, 0, 0)
+SlidValue.ZIndex = 2
+SlidValue.Font = Enum.Font.Roboto
+SlidValue.TextColor3 = Color3.new(1, 1, 1)
+SlidValue.TextSize = 14
+SlidValue.TextTransparency = 1
+
+UISizeConstraint_11.Parent = SlidValue
+
+Info.Name = "Info"
+Info.Parent = Slider
+Info.AnchorPoint = Vector2.new(0, 1)
+Info.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
+Info.BorderSizePixel = 0
+Info.Position = UDim2.new(0.00370370364, 0, 1, 0)
+Info.Size = UDim2.new(0, 268, 0, 15)
+Info.Font = Enum.Font.Roboto
+Info.Text = "Walkspeed Enchancer"
+Info.TextColor3 = Color3.new(1, 1, 1)
+Info.TextSize = 15
+Info.TextWrapped = true
+local UIS = game:GetService("UserInputService")
+local function upd(input,Slideer)
+	pos = UIS:GetMouseLocation()-Slideer.Parent.Slid.AbsolutePosition
+	local percentage = math.clamp(pos.X/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
+	Slideer.Position = UDim2.new(percentage,-3,0,-2)
+	Slideer.Parent.SlidValue.Text = math.round(percentage*max)
+	end
+		ButtonSlid.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				startpos = ButtonSlid.Position
+				sliding = true
+				good = ButtonSlid
+				ButtonSlid.InputEnded:Connect(function(input)
+					if input.UserInputType == Enum.UserInputType.MouseButton1 then
+						sliding = false
+					end
+				end)
+			end
+		end)
+		Slider.MouseEnter:Connect(function()
+			if Addition.Size ~= UDim2.new(0,172,0,460) then
+			Tween(SlidValue,.06,UDim2.new(SlidValue.Size.X.Scale,SlidValue.Size.X.Offset,SlidValue.Size.Y.Scale,10)):Play()
+			Tween(Slider.Info,.08,UDim2.new(0,268,0,0))
+			Tween2(Info,.05,1):Play()
+			a.Completed:Wait()
+			Tween2(SlidValue,.02,0):Play()
+			a.Completed:Wait()
+			Slider.MouseLeave:Connect(function()
+				Tween2(SlidValue,.02,1):Play()
+				a.Completed:Wait()
+				Tween(SlidValue,.06,UDim2.new(Slider.SlidValue.Size.X.Scale,Slider.SlidValue.Size.X.Offset,Slider.SlidValue.Size.Y.Scale,0)):Play()
+				a.Completed:Wait()
+				Tween(Info,.08,UDim2.new(0,268,0,15))
+					Tween2(Info,.05,0):Play()
+				end)
+			end
+		end)
+		ButtonSlid.Changed:Connect(function(prop)
+			if prop == "Position" then
+			end
+		end)
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if sliding == true then
+					upd(input,good)
+				end
+			end
+		end)
+end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
