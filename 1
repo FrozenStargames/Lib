@@ -731,11 +731,11 @@ SlidValue.Parent = Slider
 SlidValue.BackgroundColor3 = Color3.new(0.27451, 0.266667, 0.435294)
 SlidValue.BorderSizePixel = 0
 SlidValue.Position = UDim2.new(0.00370370364, 0, 0.294, -1)
-SlidValue.Size = UDim2.new(0, 268, 0, 0)
+SlidValue.Size = UDim2.new(0, 270, 0, 0)
 SlidValue.ZIndex = 2
 SlidValue.Font = Enum.Font.Roboto
 SlidValue.TextColor3 = Color3.new(1, 1, 1)
-SlidValue.TextSize = 14
+SlidValue.TextSize = 15
 SlidValue.TextTransparency = 1
 
 UISizeConstraint_11.Parent = SlidValue
@@ -773,7 +773,7 @@ local function upd(input,Slideer)
 		end)
 		Slider.MouseEnter:Connect(function()
 			if Addition.Size ~= UDim2.new(0,172,0,460) then
-			Tween(SlidValue,.06,UDim2.new(SlidValue.Size.X.Scale,SlidValue.Size.X.Offset,SlidValue.Size.Y.Scale,10)):Play()
+			Tween(SlidValue,.06,UDim2.new(SlidValue.Size.X.Scale,SlidValue.Size.X.Offset,SlidValue.Size.Y.Scale,15)):Play()
 			Tween(Slider.Info,.08,UDim2.new(0,268,0,0))
 			Tween2(Info,.05,1):Play()
 			a.Completed:Wait()
