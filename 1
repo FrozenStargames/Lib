@@ -758,7 +758,7 @@ local function upd(input,Slideer)
 	pos = UIS:GetMouseLocation()-Slideer.Parent.Slid.AbsolutePosition
 	local percentage = math.clamp(pos.X/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
 	Slideer.Position = UDim2.new(percentage,-3,0,-2)
-	Slideer.Parent.SlidValue.Text = math.clamp(min,max,math.round(percentage*max))
+	Slideer.Parent.SlidValue.Text = math.clamp(math.round(percentage*max),min,max)
 	pcall(callback,(math.clamp(math.round(percentage*max),min,max))
 	end
 		ButtonSlid.InputBegan:Connect(function(input)
