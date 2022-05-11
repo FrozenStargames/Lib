@@ -650,7 +650,7 @@ TextLabel.BorderColor3 = Color3.new(1, 1, 1)
 TextLabel.BorderSizePixel = 0
 TextLabel.Size = UDim2.new(0, 200, 0, 50)
 TextLabel.Font = Enum.Font.Roboto
-TextLabel.Text = ""
+TextLabel.Text = "fg"
 TextLabel.TextColor3 = Color3.new(1, 1, 1)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14
@@ -667,12 +667,6 @@ Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0, -10, 0.949999988, 0)
 Frame.Size = UDim2.new(0, 270, 0, 1)
 
-while true do
-wait(.2)
-print(11)
-print(text)
-	TextLabel.Text = text
-end
 end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
