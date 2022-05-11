@@ -1,4 +1,4 @@
-print(1860)
+print(0)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -758,8 +758,8 @@ local function upd(input,Slideer)
 	pos = UIS:GetMouseLocation()-Slideer.Parent.Slid.AbsolutePosition
 	local percentage = math.clamp(pos.X/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
 	Slideer.Position = UDim2.new(percentage,-3,0,-2)
-	Slideer.Parent.SlidValue.Text = min + math.round(percentage*max)
-	pcall(callback,(min + math.round(percentage*max)))
+	Slideer.Parent.SlidValue.Text = math.clamp(min,max,math.round(percentage*max))
+	pcall(callback,(math.clamp(min,max,math.round(percentage*max)))
 	end
 		ButtonSlid.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
