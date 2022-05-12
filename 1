@@ -763,9 +763,9 @@ end
 end
 local function upd(input,Slideer)
 	pos = UIS:GetMouseLocation()-Slideer.Parent.Slid.AbsolutePosition
-	local percentage = math.clamp(pos.X/(Slideer.Parent.Slid.AbsoluteSize.X/min),0,1)
+	local percentage = math.clamp(pos.X/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
 	Slideer.Position = UDim2.new(percentage,-3,0,-2)
-	Slideer.Parent.SlidValue.Text = help(math.round((percentage*max)+min))
+	Slideer.Parent.SlidValue.Text = math.round((percentage*max)
 	pcall(callback,math.round(percentage*max))
 	end
 		ButtonSlid.InputBegan:Connect(function(input)
@@ -810,6 +810,90 @@ local function upd(input,Slideer)
 			end
 		end)
 end
+function libFill:addDropdown(text,callback,table)
+local Dropdown = Instance.new("Frame")
+local UISizeConstraint_12 = Instance.new("UISizeConstraint")
+local Down = Instance.new("ScrollingFrame")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local TextButton_3 = Instance.new("TextButton")
+local UISizeConstraint_13 = Instance.new("UISizeConstraint")
+local Open = Instance.new("ImageLabel")
+local Label = Instance.new("TextLabel")
+local callback = callback or function() end
+
+Dropdown.Name = "Dropdown"
+Dropdown.Parent = Section
+Dropdown.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
+Dropdown.BorderSizePixel = 0
+Dropdown.Position = UDim2.new(-0.162962973, 0, NAN, 0)
+Dropdown.Size = UDim2.new(0, 333, 0, 0)
+
+UISizeConstraint_12.Parent = Dropdown
+UISizeConstraint_12.MaxSize = Vector2.new(268, 20)
+UISizeConstraint_12.MinSize = Vector2.new(268, 20)
+
+Label.Parent = Dropdown
+Label.TextColor3 = Color3.new(1,1,1)
+Label.BackgroundTransparency = 1
+Label.BorderSizePixel = 0
+Label.Size = UDim2.new(0, 266, 0, 20)
+Label.Font = Enum.Font.Roboto
+Label.TextSize = 15
+
+Down.Name = "Down"
+Down.Parent = Dropdown
+Down.Active = true
+Down.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
+Down.BorderSizePixel = 0
+Down.Position = UDim2.new(0.0018656716, 0, 0, 0)
+Down.Size = UDim2.new(0, 266, 0, 0)
+
+UIListLayout_2.Parent = Down
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+
+TextButton_3.Parent = Down
+TextButton_3.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
+TextButton_3.BorderColor3 = Color3.new(0.184314, 0.180392, 0.298039)
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Size = UDim2.new(0, 256, 0, 20)
+TextButton_3.AutoButtonColor = false
+TextButton_3.Font = Enum.Font.Roboto
+TextButton_3.TextColor3 = Color3.new(1, 1, 1)
+TextButton_3.TextSize = 14
+TextButton_3.TextXAlignment = Enum.TextXAlignment.Left
+
+UISizeConstraint_13.Parent = TextButton_3
+UISizeConstraint_13.MaxSize = Vector2.new(256, 20)
+UISizeConstraint_13.MinSize = Vector2.new(256, 20)
+
+Open.Name = "Open"
+Open.Parent = Dropdown
+Open.BackgroundColor3 = Color3.new(0.439216, 0.423529, 0.690196)
+Open.BackgroundTransparency = 1
+Open.BorderSizePixel = 0
+Open.Position = UDim2.new(0.958955348, 0, 0.25, 0)
+Open.Rotation = 270
+Open.Size = UDim2.new(0, 9, 0, 9)
+Open.ZIndex = 5
+Open.Image = "http://www.roblox.com/asset/?id=4292970642"
+Open.ImageColor3 = Color3.new(0.439216, 0.423529, 0.690196)
+
+local Toggled = false
+		Open.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				if Toggled == false then
+					Tween2(Label,.4,1)
+					Tween(Down,.5,UDim2.new(0,266,0,200)):Play()
+					Toggled = true
+				else
+					Tween2(Label,.4,0)
+					Tween(Down,.5,UDim2.new(0,266,0,0)):Play()
+					Toggled = false
+				end
+			end
+		end)
+end)
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
