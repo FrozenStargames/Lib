@@ -883,17 +883,17 @@ local Toggled = false
 		Open.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then
 				if Toggled == false then
-					Tween2(Label,.4,1)
+					Tween2(Label,.4,1):Play()
 					Tween(Down,.5,UDim2.new(0,266,0,200)):Play()
 					Toggled = true
 				else
-					Tween2(Label,.4,0)
+					Tween2(Label,.4,0):Play()
 					Tween(Down,.5,UDim2.new(0,266,0,0)):Play()
 					Toggled = false
 				end
 			end
 		end)
-end)
+end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
