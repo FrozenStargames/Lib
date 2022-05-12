@@ -760,6 +760,7 @@ res = max
 return res
 else return res
 end
+end
 local function upd(input,Slideer)
 	pos = UIS:GetMouseLocation()-Slideer.Parent.Slid.AbsolutePosition
 	local percentage = math.clamp((pos.X)/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
