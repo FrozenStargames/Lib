@@ -898,6 +898,11 @@ TextButton_3.Text = v
 UISizeConstraint_13.Parent = TextButton_3
 UISizeConstraint_13.MaxSize = Vector2.new(256, 20)
 UISizeConstraint_13.MinSize = Vector2.new(256, 20)
+TextButton_3.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		pcall(callback,TextButton_3.Text)
+	end
+end)
 end
 end
 delay(1,function()
