@@ -847,6 +847,8 @@ Down.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
 Down.BorderSizePixel = 0
 Down.Position = UDim2.new(0.0018656716, 0, 0, 0)
 Down.Size = UDim2.new(0, 266, 0, 0)
+Down.ScrollBarImageTransparency = 1
+Down.AutomaticCanvasSize = Enum.AutomaticSize.Y
 
 UIListLayout_2.Parent = Down
 UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -887,8 +889,8 @@ local Toggled = false
 					Tween(Down,.5,UDim2.new(0,266,0,200)):Play()
 					Toggled = true
 				else
-					Tween2(Label,.4,0):Play()
-					Tween(Down,.5,UDim2.new(0,266,0,0)):Play()
+					Tween2(Label,.4,1):Play()
+					Tween(Down,.5,UDim2.new(0,266,0,20)):Play()
 					Toggled = false
 				end
 			end
