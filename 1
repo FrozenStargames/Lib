@@ -815,8 +815,6 @@ local Dropdown = Instance.new("Frame")
 local UISizeConstraint_12 = Instance.new("UISizeConstraint")
 local Down = Instance.new("ScrollingFrame")
 local UIListLayout_2 = Instance.new("UIListLayout")
-local TextButton_3 = Instance.new("TextButton")
-local UISizeConstraint_13 = Instance.new("UISizeConstraint")
 local Open = Instance.new("ImageLabel")
 local Label = Instance.new("TextLabel")
 local callback = callback or function() end
@@ -881,6 +879,8 @@ local Toggled = false
 			end
 		end)
 for i,v in pairs(table) do
+local TextButton_3 = Instance.new("TextButton")
+local UISizeConstraint_13 = Instance.new("UISizeConstraint")
 TextButton_3.Name = tostring(v) .. "Bu"
 TextButton_3.Parent = Down
 TextButton_3.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
@@ -892,6 +892,7 @@ TextButton_3.Font = Enum.Font.Roboto
 TextButton_3.TextColor3 = Color3.new(1, 1, 1)
 TextButton_3.TextSize = 14
 TextButton_3.TextXAlignment = Enum.TextXAlignment.Left
+TextButton_3.Text = table
 
 UISizeConstraint_13.Parent = TextButton_3
 UISizeConstraint_13.MaxSize = Vector2.new(256, 20)
