@@ -1,4 +1,4 @@
-print(2)
+print(3)
 local a = nil
 local function Tween(Object,time1,Size1)
 	a = game:GetService("TweenService"):Create(Object,TweenInfo.new(time1),{Size = Size1})
@@ -754,11 +754,17 @@ Info.TextColor3 = Color3.new(1, 1, 1)
 Info.TextSize = 15
 Info.TextWrapped = true
 local UIS = game:GetService("UserInputService")
+local function help(res)
+if res > max then
+res = max
+return res
+else return res
+end
 local function upd(input,Slideer)
 	pos = UIS:GetMouseLocation()-Slideer.Parent.Slid.AbsolutePosition
-	local percentage = math.clamp((pos.X+min)/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
+	local percentage = math.clamp((pos.X)/Slideer.Parent.Slid.AbsoluteSize.X,0,1)
 	Slideer.Position = UDim2.new(percentage,-3,0,-2)
-	Slideer.Parent.SlidValue.Text = math.round(percentage*max)
+	Slideer.Parent.SlidValue.Text = help(math.round((percentage*max)+min))
 	pcall(callback,math.round(percentage*max))
 	end
 		ButtonSlid.InputBegan:Connect(function(input)
