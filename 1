@@ -854,21 +854,6 @@ UIListLayout_2.Parent = Down
 UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 
-TextButton_3.Parent = Down
-TextButton_3.BackgroundColor3 = Color3.new(0.172549, 0.168627, 0.27451)
-TextButton_3.BorderColor3 = Color3.new(0.184314, 0.180392, 0.298039)
-TextButton_3.BorderSizePixel = 0
-TextButton_3.Size = UDim2.new(0, 256, 0, 20)
-TextButton_3.AutoButtonColor = false
-TextButton_3.Font = Enum.Font.Roboto
-TextButton_3.TextColor3 = Color3.new(1, 1, 1)
-TextButton_3.TextSize = 14
-TextButton_3.TextXAlignment = Enum.TextXAlignment.Left
-
-UISizeConstraint_13.Parent = TextButton_3
-UISizeConstraint_13.MaxSize = Vector2.new(256, 20)
-UISizeConstraint_13.MinSize = Vector2.new(256, 20)
-
 Open.Name = "Open"
 Open.Parent = Dropdown
 Open.BackgroundColor3 = Color3.new(0.439216, 0.423529, 0.690196)
@@ -895,6 +880,9 @@ local Toggled = false
 				end
 			end
 		end)
+for i,v in pairs(table) do
+print(v)
+end
 end
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
