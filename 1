@@ -948,7 +948,7 @@ delay(1,function()
 		if Sizer.Parent.Parent.Parent == PrePage then
 			for i,v in pairs(Sizer.Parent:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
-					if not v.Parent.Parent.Parent.Name == "Pre-Page" then
+					if v.Parent.Parent.Parent.Name ~= "Pre-Page" then
 					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
 					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+6)
 					end
