@@ -510,8 +510,8 @@ Underline.Size = UDim2.new(0, 270, 0, 1)
 delay(1,function()
 			for i,v in pairs(Section:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
-					UISizeConstraint.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
-					UISizeConstraint.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+6)
+					UISizeConstraint.MaxSize = Vector2.new(270,UISizeConstraint.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
+					UISizeConstraint.MinSize = Vector2.new(270,UISizeConstraint.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+6)
 				end
 			end
 end)
