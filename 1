@@ -507,6 +507,14 @@ Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
+delay(1,function()
+			for i,v in pairs(Section:GetChildren()) do
+				if not string.find(tostring(v.ClassName),"UI") then
+					UISizeConstraint.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
+					UISizeConstraint.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+6)
+				end
+			end
+end)
 local libFill = {}
 function libFill:addButton(text,callback)
 local callback = callback or function() end
@@ -942,22 +950,6 @@ if enter then
 end
 end)
 end
-delay(1,function()
-    for i,Sizer in pairs(PrePage:GetDescendants()) do
-	if Sizer.ClassName == "UISizeConstraint" then
-		if Sizer.Parent.Parent.Parent == PrePage then
-			for i,v in pairs(Sizer.Parent:GetChildren()) do
-				if not string.find(tostring(v.ClassName),"UI") then
-					if not string.find(v.Name,"Section") then
-					Sizer.MaxSize = Vector2.new(270,Sizer.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
-					Sizer.MinSize = Vector2.new(270,Sizer.MinSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MinSize.Y+6)
-					end
-				end
-			end
-		end
-	end
-end
-end)
 PrePage:FindFirstChildOfClass("Frame").Visible = true
 return libFill
 end
