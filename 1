@@ -905,6 +905,41 @@ TextButton_3.InputBegan:Connect(function(input)
 end)
 end
 end
+function libFill:addBox(text,callback)
+local TextBox = Instance.new("TextBox")
+local UISizeConstraint_40 = Instance.new("UISizeConstraint")
+local Frame_7 = Instance.new("Frame")
+local callback = callback or function() end
+
+TextBox.Parent = Section_3
+TextBox.BackgroundColor3 = Color3.new(1, 1, 1)
+TextBox.BackgroundTransparency = 1
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(-0.248148158, 0, INF, 0)
+TextBox.Size = UDim2.new(0, 335, 0, 0)
+TextBox.ZIndex = 2
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.Roboto
+TextBox.Text = text
+TextBox.TextColor3 = Color3.new(1, 1, 1)
+TextBox.TextSize = 15
+
+UISizeConstraint_40.Parent = TextBox
+UISizeConstraint_40.MaxSize = Vector2.new(250, 20)
+UISizeConstraint_40.MinSize = Vector2.new(250, 20)
+
+Frame_7.Parent = TextBox
+Frame_7.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
+Frame_7.BorderSizePixel = 0
+Frame_7.Position = UDim2.new(0, -10, 0.949999988, -3)
+Frame_7.Size = UDim2.new(0, 270, 0, 1)
+
+TextBox.FocusLost:Connect(function(enter)
+if enter then
+	pcall(callback,TextBox.Text)
+end
+end)
+
 delay(1,function()
     for i,Sizer in pairs(PrePage:GetDescendants()) do
 	if Sizer.ClassName == "UISizeConstraint" then
