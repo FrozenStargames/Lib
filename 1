@@ -902,7 +902,6 @@ UISizeConstraint_13.MaxSize = Vector2.new(256, 20)
 UISizeConstraint_13.MinSize = Vector2.new(256, 20)
 TextButton_3.InputBegan:Connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		Label.Text = TextButton_3.Text
 		pcall(callback,TextButton_3.Text)
 	end
 end)
