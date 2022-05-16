@@ -507,7 +507,7 @@ Underline.BackgroundColor3 = Color3.new(0.266667, 0.25098, 0.423529)
 Underline.BorderSizePixel = 0
 Underline.Position = UDim2.new(0, -10, 0.949999988, 0)
 Underline.Size = UDim2.new(0, 270, 0, 1)
-delay(1,function()
+delay(.2,function()
 			for i,v in pairs(Section:GetChildren()) do
 				if not string.find(tostring(v.ClassName),"UI") then
 					UISizeConstraint.MaxSize = Vector2.new(270,UISizeConstraint.MaxSize.Y + v:FindFirstChildOfClass("UISizeConstraint").MaxSize.Y+6)
