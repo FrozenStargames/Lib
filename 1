@@ -549,19 +549,7 @@ ButCorner.Name = text.."Corner"
 ButCorner.CornerRadius = UDim.new(0,8)
 ButCorner.Parent = Button
 end
-function libFill:addToggle(text,callback,function()
-					if value == false then
-					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,20,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
-					Tween6(TextLabel_2,.3,Color3.fromRGB(10, 209, 239)):Play()
-					value = true
-					pcall(callback,value,TextLabel_2)
-				else
-					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,0,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
-					Tween6(TextLabel_2,.3,Color3.fromRGB(5, 93, 107)):Play()
-					value = false
-					pcall(callback,value,TextLabel_2)
-					end
-				end)
+function libFill:addToggle(text,callback,toggle)
 local thing = {}
 local ToggleAll = Instance.new("Frame")
 local UISizeConstraint_4 = Instance.new("UISizeConstraint")
@@ -642,10 +630,8 @@ UISizeConstraint_7.Parent = Frame_2
 UISizeConstraint_7.MaxSize = Vector2.new(16, 16)
 UISizeConstraint_7.MinSize = Vector2.new(16, 16)
 local value = false
-local callback = callback or function() end
-		ToggleBack.InputBegan:Connect(function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then
-					if value == false then
+local function toggle()
+if value == false then
 					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,20,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
 					Tween6(TextLabel_2,.3,Color3.fromRGB(10, 209, 239)):Play()
 					value = true
@@ -655,6 +641,20 @@ local callback = callback or function() end
 					Tween6(TextLabel_2,.3,Color3.fromRGB(5, 93, 107)):Play()
 					value = false
 					pcall(callback,value,TextLabel_2)
+end
+local callback = callback or function() end
+		ToggleBack.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					if value == false then
+					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,20,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
+					Tween6(TextLabel_2,.3,Color3.fromRGB(10, 209, 239)):Play()
+					value = true
+					pcall(callback,value,TextLabel_2,toggle())
+				else
+					Tween5(ToggleBack.Frame,.3,UDim2.new(ToggleBack.Frame.Position.X.Scale,0,ToggleBack.Frame.Position.Y.Scale,ToggleBack.Frame.Position.Y.Offset)):Play()
+					Tween6(TextLabel_2,.3,Color3.fromRGB(5, 93, 107)):Play()
+					value = false
+					pcall(callback,value,TextLabel_2,toggle())
 				end
 			end
 	end)
